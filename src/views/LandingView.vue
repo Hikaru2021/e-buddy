@@ -13,7 +13,7 @@
           </button>
         </div>
       </div>
-      <div class="flex flex-grow items-center justify-center">
+      <div class="flex flex-grow items-start justify-start">
         <div>
           <router-link
             to="/register"
