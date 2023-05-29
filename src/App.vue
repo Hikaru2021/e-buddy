@@ -1,9 +1,9 @@
 <template>
-  <HomeView />
+  <AddExpenses />
   <!-- <RouterView /> -->
 </template>
 
 <script setup>
 //import { RouterLink, RouterView } from 'vue-router'
-import HomeView from './views/HomeView.vue'
+import AddExpenses from './views/AddExpenses.vue'
 </script>
