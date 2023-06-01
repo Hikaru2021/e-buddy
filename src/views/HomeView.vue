@@ -2,12 +2,16 @@
 import AddExpenses from '@/views/AddExpenses.vue'
 import Budget from '@/views/Budget.vue'
 import BillReminders from '@/views/BillReminders.vue'
+import FinancialReport from '@/views/FinancialReport.vue'
+import ExpensesView from '@/views/ExpensesView.vue'
 
 export default {
   components: {
     AddExpenses,
     Budget,
-    BillReminders
+    BillReminders,
+    FinancialReport,
+    ExpensesView
   },
   methods: {
     navigateTo(route) {
@@ -32,15 +36,21 @@ export default {
     </div>
   </div>
 
-  <!-- Budget & Expenses  Container -->
+  <!-- Budget & Expenses Container -->
   <div class="flex flex-col justify-center items-center h-screen">
     <!-- Budget -->
-    <div class="text-center border border-amber-500 rounded-2xl p-3 mb-2">
+    <div
+      @click="navigateTo('/budget')"
+      class="clickable-card text-center border border-amber-500 rounded-2xl p-3 mb-2"
+    >
       <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Budget</h2>
       <p class="text-xl">1234</p>
     </div>
     <!-- Expenses -->
-    <div class="text-center border border-amber-500 rounded-2xl p-8">
+    <div
+      @click="navigateTo('/expenses-view')"
+      class="clickable-card text-center border border-amber-500 rounded-2xl p-8"
+    >
       <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
       <p class="text-xl p-2">1234</p>
       <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
@@ -49,7 +59,7 @@ export default {
       <p class="text-xl">8910</p>
     </div>
 
-    <!-- Buttons:View Financial Report, Budget and Bill Reminders -->
+    <!-- Buttons: View Financial Report, Budget, and Bill Reminders -->
     <div class="flex justify-center mt-5 mb-20">
       <button
         @click="navigateTo('/budget')"
@@ -71,6 +81,7 @@ export default {
       </button>
     </div>
   </div>
+
   <!-- Add Expenses Button -->
   <div class="sticky-container">
     <router-link to="/add-expenses" class="image-button">
@@ -101,5 +112,9 @@ export default {
 .image-button {
   display: flex;
   align-items: center;
+}
+
+.clickable-card {
+  cursor: pointer;
 }
 </style>

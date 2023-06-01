@@ -1,12 +1,12 @@
 <!-- 
     NOTE:
 
-    I created a component for each reminders.
-    Where if naa new reminder, i-call ra to syang component 
+    I created a component for each reminders -- "Reminder Box".
+    Where if there is new reminder, i-call ra to syang component 
         then supply the details nalang.
 
     Please also make sure that if they click one of the Reminder Box,
-        they should be able to edit it.
+        they should be able to edit the details of it.
  -->
 
 <template>

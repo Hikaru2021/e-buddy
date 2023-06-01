@@ -1,3 +1,9 @@
+<!-- 
+  NOTE
+    When the user click the save button,
+      the the new reminder should be added to the "Bills Reminder" page.
+ -->
+
 <template>
   <div>
     <upper-nav></upper-nav>
