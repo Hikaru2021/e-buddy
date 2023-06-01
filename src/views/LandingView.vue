@@ -8,7 +8,7 @@
           <button class="p-4 text-lg border-orange-500 outline-2 border-2 rounded-full">
             GET STARTED FOR FREE
           </button>
-          <button class="p-4 text-lg bg-gradient-to-r from-orange-400 to-white hover:bg-white hover:text-purple-500 shadow-lg rounded-full transition duration-300">
+          <button class="p-4 text-lg bg-gradient-to-r from-orange-400 to-white hover:bg-white hover:text-purple-500 shadow-lg rounded-full transition duration-300" @click="redirectToLogin">
             LOGIN
           </button>
         </div>
@@ -43,8 +43,12 @@
   
   <script>
   export default {
-     
-  };
+  methods: {
+    redirectToLogin() {
+      this.$router.push({ name: 'login' })
+    }
+  }
+}
   </script>
   
   <style scoped>
