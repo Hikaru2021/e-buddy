@@ -8,6 +8,8 @@ import AddExpenses from '../views/AddExpenses.vue'
 import Budget from '@/views/Budget.vue'
 import BillReminders from '@/views/BillReminders.vue'
 import SetReminders from '@/views/SetReminders.vue'
+import FinancialReport from '@/views/FinancialReport.vue'
+import ExpensesView from '@/views/ExpensesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +58,16 @@ const router = createRouter({
       path: '/set-reminders',
       name: 'SetReminders',
       component: SetReminders
+    },
+    {
+      path: '/view-financial-report',
+      name: 'FinancialReport',
+      component: FinancialReport
+    },
+    {
+      path: '/expenses-view',
+      name: 'ExpensesView',
+      component: ExpensesView
     }
   ]
 })

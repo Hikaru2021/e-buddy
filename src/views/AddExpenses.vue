@@ -31,7 +31,10 @@
       </div>
 
       <!-- Add Button -->
-      <button class="bg-amber-500 hover:bg-amber-400 text-white font-bold py-2 px-9 rounded mt-4">
+      <button
+        @click="navigateToExpensesView"
+        class="bg-amber-500 hover:bg-amber-400 text-white font-bold py-2 px-9 rounded mt-4"
+      >
         Add
       </button>
     </div>
@@ -48,8 +51,12 @@ export default {
   methods: {
     restrictToNumbers(event) {
       event.target.value = event.target.value.replace(/[^0-9]/g, '')
+    },
+    navigateToExpensesView() {
+      this.$router.push('/expenses-view')
     }
   }
 }
 </script>
+
 <style></style>
