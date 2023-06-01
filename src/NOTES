@@ -1,0 +1,11 @@
+BUDGET
+Please make the numbers editable.
+If the user click the numbers on Weekly and Monthly Budget, pwede niya maedit ang numbers.
+Then it will be saved and reflected mismo sa screen.
+The Amount Left, expenses minus budget sya.
+
+BILL-REMINDERS
+I created a component for each reminders.
+Where if naa new reminder, i-call ra to syang component
+then supply the details nalang.
+Please also make sure that if they click one of the Reminder Box, they should be able to edit it.
