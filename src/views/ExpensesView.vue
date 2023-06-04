@@ -1,9 +1,10 @@
+<!-- WORK HERE, EXPENSES TABLE -->
 <template>
   <div>
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- Expenses Text -->
-      <h2 class="text-5xl font-bold mt-4 text-center text-amber-300">EXPENSES</h2>
+      <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">EXPENSES</h2>
     </div>
 
     <!-- Expenses Table -->

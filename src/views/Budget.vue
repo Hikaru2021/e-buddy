@@ -12,7 +12,7 @@
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "BUDGET" Text -->
-      <h2 class="text-5xl font-bold mt-4 text-center text-amber-300">BUDGET</h2>
+      <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">BUDGET</h2>
 
       <!-- Budget Tracker Container -->
       <div class="border border-amber-500 rounded-lg p-5 mt-20 w-4/5">

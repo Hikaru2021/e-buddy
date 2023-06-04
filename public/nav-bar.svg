@@ -4,17 +4,17 @@
    viewBox="0 -960 960 960"
    width="48"
    version="1.1"
-   id="svg6783"
-   sodipodi:docname="notification.svg"
+   id="svg8009"
+   sodipodi:docname="nav-bar.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs6787" />
+     id="defs8013" />
   <sodipodi:namedview
-     id="namedview6785"
+     id="namedview8011"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -31,9 +31,9 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6783" />
+     inkscape:current-layer="svg8009" />
   <path
-     d="M190-200q-13 0-21.5-8.5T160-230q0-13 8.5-21.5T190-260h54v-306q0-82 49.5-148.5T424-798v-29q0-23 16.5-38t39.5-15q23 0 39.5 15t16.5 38v29q81 17 131 83.5T717-566v306h53q13 0 21.5 8.5T800-230q0 13-8.5 21.5T770-200H190ZM480-80q-32 0-56-23.5T400-160h160q0 33-23.5 56.5T480-80Z"
-     id="path6781"
+     d="M150-240q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T150-300h660q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T810-240H150Zm0-210q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T150-510h660q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T810-450H150Zm0-210q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T150-720h660q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T810-660H150Z"
+     id="path8007"
      style="fill:#ff6600" />
 </svg>

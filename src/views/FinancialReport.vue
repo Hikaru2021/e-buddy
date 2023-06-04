@@ -10,7 +10,7 @@
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- Financial Report Text -->
-      <h2 class="text-5xl font-bold mt-4 text-center text-amber-300">FINANCIAL REPORT</h2>
+      <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">FINANCIAL REPORT</h2>
     </div>
 
     <!-- Financial Report Container -->
