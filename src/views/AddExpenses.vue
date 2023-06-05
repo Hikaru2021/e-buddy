@@ -3,7 +3,7 @@
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "Add Expenses" Text -->
-      <h2 class="text-5xl font-bold mt-4 text-center text-amber-300">ADD EXPENSES</h2>
+      <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">ADD EXPENSES</h2>
 
       <!-- Add Expenses Container -->
       <div class="w-3/4 h-1/2 flex flex-col items-center bg-amber-100 p-10 rounded mt-10">

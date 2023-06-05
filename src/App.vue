@@ -1,5 +1,4 @@
 <template>
-  <!-- <AddExpenses /> -->
   <RouterView />
   <!-- <HomeView /> -->
 </template>
