@@ -9,8 +9,28 @@ import Budget from '@/views/Budget.vue'
 import ExpensesView from '@/views/ExpensesView.vue'
 import SideNav from '@/components/SideNav.vue'
 import Notifications from '@/views/Notifications.vue'
+import getDb from "../composable/getDb";
 
 export default {
+  setup() {
+    const {
+      expenses,
+      error,
+      thisMonthsExpenses,
+      thisWeeksExpenses,
+      lastMonthsExpenses,
+      load,
+    } = getDb();
+    load();
+
+    return {
+      expenses,
+      thisMonthsExpenses,
+      thisWeeksExpenses,
+      lastMonthsExpenses,
+      error,
+    };
+  },
   components: {
     AddExpenses,
     Budget,
@@ -43,24 +63,20 @@ export default {
     <!-- Budget & Expenses Container -->
     <div class="flex flex-col justify-center items-center h-screen">
       <!-- Budget -->
-      <div
-        @click="navigateTo('/budget')"
-        class="clickable-card text-center border border-amber-500 rounded-2xl p-3 mb-2 shadow-md"
-      >
+      <div @click="navigateTo('/budget')"
+        class="clickable-card text-center border border-amber-500 rounded-2xl p-3 mb-2 shadow-md">
         <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Budget</h2>
         <p class="text-xl">1234</p>
       </div>
       <!-- Expenses -->
-      <div
-        @click="navigateTo('/expenses-view')"
-        class="clickable-card text-center border border-amber-500 rounded-2xl p-8"
-      >
+      <div @click="navigateTo('/expenses-view')"
+        class="clickable-card text-center border border-amber-500 rounded-2xl p-8">
         <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
-        <p class="text-xl p-2">1234</p>
+        <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
-        <p class="text-xl p-2">4567</p>
+        <p class="text-xl p-2">{{ thisMonthsExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">Last Month's Expenses</h2>
-        <p class="text-xl">8910</p>
+        <p class="text-xl">{{ lastMonthsExpenses }}</p>
       </div>
     </div>
 
