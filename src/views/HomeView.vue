@@ -9,7 +9,8 @@ import Budget from '@/views/Budget.vue'
 import ExpensesView from '@/views/ExpensesView.vue'
 import SideNav from '@/components/SideNav.vue'
 import Notifications from '@/views/Notifications.vue'
-import getDb from "../composable/getDb";
+import getDb from "@/composable/getDb.js";
+import getMonthBudget from '@/composable/getMonthBudget.js'
 
 export default {
   setup() {
@@ -19,15 +20,19 @@ export default {
       thisMonthsExpenses,
       thisWeeksExpenses,
       lastMonthsExpenses,
-      load,
+      loadDb,
     } = getDb();
-    load();
+    loadDb();
+
+    const { monthBudgetLeft, loadMonthBudget } = getMonthBudget();
+    loadMonthBudget();
 
     return {
       expenses,
       thisMonthsExpenses,
       thisWeeksExpenses,
       lastMonthsExpenses,
+      monthBudgetLeft,
       error,
     };
   },
@@ -66,7 +71,7 @@ export default {
       <div @click="navigateTo('/budget')"
         class="clickable-card text-center border border-amber-500 rounded-2xl p-3 mb-2 shadow-md">
         <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Budget</h2>
-        <p class="text-xl">1234</p>
+        <p class="text-xl">{{ monthBudgetLeft }}</p>
       </div>
       <!-- Expenses -->
       <div @click="navigateTo('/expenses-view')"
