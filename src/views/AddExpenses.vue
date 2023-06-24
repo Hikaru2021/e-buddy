@@ -14,10 +14,10 @@
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Category</h3>
           <select class="w-full h-7 border-2 border-amber-500 rounded" required v-model="type">
-            <option value="category1">Others</option>
-            <option value="category1">Category 1</option>
-            <option value="category2">Category 2</option>
-            <option value="category3">Category 3</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Housing">Housing</option>
+            <option value="Others">Others</option>
           </select>
         </div>
         <div class="w-2/3 flex flex-col mb-4">
