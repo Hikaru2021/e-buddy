@@ -61,16 +61,16 @@ export default {
     </div>
 
     <!-- Budget & Expenses Container -->
-    <div class="flex flex-col justify-center items-center h-screen">
+    <div class="flex flex-col justify-center items-center h-screen bg-image">
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
-        class="clickable-card text-center border border-amber-500 rounded-2xl p-3 mb-2 shadow-md">
+        class="clickable-card text-center border border-black rounded-2xl p-3 mb-2 shadow-md">
         <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Budget</h2>
         <p class="text-xl">1234</p>
       </div>
       <!-- Expenses -->
       <div @click="navigateTo('/expenses-view')"
-        class="clickable-card text-center border border-amber-500 rounded-2xl p-8">
+        class="clickable-card text-center border border-black rounded-2xl p-8">
         <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
         <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
@@ -81,7 +81,7 @@ export default {
     </div>
 
     <!-- Add Expenses Button -->
-    <div class="sticky-container">
+    <div class="sticky-container bg-orang">
       <router-link to="/add-expenses" class="image-button">
         <img src="add-expenses.svg" alt="Image Button" class="h-10 w-10" />
       </router-link>
@@ -120,4 +120,16 @@ export default {
 .clickable-card {
   cursor: pointer;
 }
+
+.bg-image {
+    background-image: url('/homebg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  .bg-image .grid {
+    flex-grow: 1;
+  }
+  
 </style>
