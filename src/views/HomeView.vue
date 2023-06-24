@@ -49,7 +49,7 @@ export default {
 <template>
   <div>
     <!-- Upper Buttons -->
-    <div class="sticky-buttons flex justify-between items-end px-4 py-3">
+    <div class="sticky-buttons flex justify-between items-end px-4 py-3 bg-black shadow-lg">
       <div>
         <side-nav></side-nav>
       </div>
@@ -61,7 +61,7 @@ export default {
     </div>
 
     <!-- Budget & Expenses Container -->
-    <div class="flex flex-col justify-center items-center h-screen bg-image">
+    <div class="flex flex-col justify-center items-center h-screen bg-white">
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
         class="clickable-card text-center border border-black rounded-2xl p-3 mb-2 shadow-md">
@@ -81,7 +81,7 @@ export default {
     </div>
 
     <!-- Add Expenses Button -->
-    <div class="sticky-container bg-orang">
+    <div class="sticky-container bg-black">
       <router-link to="/add-expenses" class="image-button">
         <img src="add-expenses.svg" alt="Image Button" class="h-10 w-10" />
       </router-link>
@@ -132,4 +132,7 @@ export default {
     flex-grow: 1;
   }
   
+  .shadow-lg {
+    box-shadow: 0 5px 7px rgba(80, 79, 79, 0.1), 0 5px 7px rgba(93, 93, 93, 0.6);
+  }
 </style>

@@ -6,12 +6,12 @@
     </button>
 
     <!-- Side Navigation Bar -->
-    <div v-if="showSideNav" class="fixed top-0 left-0 h-screen w-60 bg-gray-100 pt-4 z-10">
+    <div v-if="showSideNav" class="fixed top-0 left-0 h-screen w-60 bg-gray-100 pt-1 z-10">
       <button
         @click="showSideNav = !showSideNav"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border"
+        class="flex items-center justify-end p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border"
       >
-        <img src="nav-bar.svg" alt="Navigation Bar" class="nav-bar-icon" />
+        <img src="doublearrowleft.svg" alt="Navigation Bar" class="nav-bar-icon" />
       </button>
       <button
         @click="navigateTo('/budget')"

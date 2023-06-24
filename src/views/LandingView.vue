@@ -1,24 +1,19 @@
 <template>
   <div class="bg-image">
-    <div class="grid grid-cols-2 gap-4">
-      <div class="p-7 object-contain flex justify-start items-start">
-        <img class="w-1/2 h-4/5" src="logo.png" alt="" />
-      </div>
-      <div class="flex items-end justify-end p-7">
-        <button class="p-2 text-lg border-orange-500 outline-2 border-2 rounded-full">
-          GET STARTED FOR FREE
-        </button>
-        <button class="p-2 ml-4 text-lg bg-gradient-to-r from-orange-400 to-white hover:bg-white hover:text-purple-500 shadow-lg rounded-full transition duration-300" @click="redirectToLogin">
-          LOGIN
-        </button>
-      </div>
-    </div>
+    <LandPageNav />
     <div class="flex flex-grow items-start justify-start">
-      <div>
+      <div class="ml-32 mt-32">
+        <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+                <div>
+                    <p class="text-base font-semibold tracking-wider text-blue-800 uppercase">BETTER BUDGET CONTROL</p>
+                    <h1 class="mt-4 text-5xl font-bold text-black flex items-center justify-center leading-normal">Your trusted companion in budgeting and money management. </h1>
+                    <p class="mt-4 text-base text-black lg:mt-8 sm:text-xl">Completely Flexible Multi-Location Budgeting Website</p>
+                </div>
+        </div>
         <router-link
           to="/register"
           tag="button"
-          class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-black text-2xl transition-all duration-200 bg-gradient-to-r from-orange-400 to-white bg-opacity-80 rounded-full lg:mt-16 hover:bg-yellow-400 focus:bg-pink-900 shadow-lg"
+          class="inline-flex items-center mt-72 px-6 py-4 font-semibold border-2 border-white text-white text-2xl transition-all duration-200 bg-black rounded-full lg:mt-16 hover:bg-yellow-400 focus:bg-pink-900 shadow-lg"
         >
           GET STARTED FOR FREE
           <svg
@@ -42,19 +37,24 @@
 </template>
 
   
-  <script>
-  export default {
+<script>
+import LandPageNav from '@/components/LandPageNav.vue';
+
+export default {
+  components: {
+    LandPageNav,
+  },
   methods: {
     redirectToLogin() {
-      this.$router.push({ name: 'login' })
-    }
-  }
-}
-  </script>
+      this.$router.push({ name: 'login' });
+    },
+  },
+};
+</script>
   
   <style scoped>
   .bg-image {
-    background-image: url('/bg.jpg');
+    background-image: url('/landpagebg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -67,5 +67,7 @@
   .shadow-lg {
     box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1), 0 5px 7px rgba(0, 0, 0, 0.6);
   }
+
+  
   </style>
   

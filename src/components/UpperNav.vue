@@ -2,7 +2,7 @@
   <div class="sticky top-0 bg-white flex justify-between items-start px-4 py-2">
     <div>
       <button class="bg-transparent border-none" @click="goBack">
-        <img src="back.svg" alt="Back Button" class="h-10 w-10" />
+        <img src="back.svg" alt="Back Button" class="h-6 w-10" />
       </button>
     </div>
     <div>
