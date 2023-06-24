@@ -67,6 +67,14 @@
       "dateString": "6/24/2023",
       "amount": 30,
       "id": 8
+    },
+    {
+      "note": "Test",
+      "type": "Housing",
+      "date": "2023-06-24T17:35:21.062Z",
+      "dateString": "6/25/2023",
+      "amount": 1200,
+      "id": 9
     }
   ]
 }

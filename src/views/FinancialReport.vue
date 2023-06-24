@@ -33,7 +33,7 @@
     </div>
 
     <!-- Monthly Chart Placeholder -->
-    <div class="mt-10 w-screen text-center">
+    <div class="flex justify-center items-center mt-10 w-auto text-center">
       <Pie v-if="render" :data="month" :options="options" />
     </div>
 
