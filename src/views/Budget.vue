@@ -18,19 +18,21 @@
       <div class="border border-amber-500 rounded-lg p-5 mt-20 w-4/5">
         <div class="flex items-center justify-between">
           <h3 class="text-lg font-bold text-amber-500">Weekly Budget</h3>
-          <p class="text-lg text-right border-b border-amber-500 pb-1">1234</p>
+          <input type="number" class="text-lg text-right border-b border-amber-500 pb-1" v-on:change="budgetChange"
+            required v-model="weekBudget" />
         </div>
         <div class="flex items-center justify-between mt-2">
           <h3 class="text-lg font-medium">Amount Left</h3>
-          <p class="text-lg text-right">123</p>
+          <p class="text-lg text-right">{{ weekBudgetLeft }}</p>
         </div>
         <div class="flex items-center justify-between mt-4">
           <h3 class="text-lg font-bold text-amber-500">Monthly Budget</h3>
-          <p class="text-lg text-right border-b border-amber-500 pb-1">5678</p>
+          <input type="number" class="text-lg text-right border-b border-amber-500 pb-1" v-on:change="budgetChange"
+            required v-model="monthBudget" />
         </div>
         <div class="flex items-center justify-between mt-2">
           <h3 class="text-lg font-medium">Amount Left</h3>
-          <p class="text-lg text-right">567</p>
+          <p class="text-lg text-right">{{ monthBudgetLeft }}</p>
         </div>
       </div>
     </div>
@@ -39,10 +41,40 @@
 
 <script>
 import UpperNav from '@/components/UpperNav.vue'
+import getBudget from '@/composable/getBudget.js'
+import axios from "axios";
 
 export default {
+  setup() {
+    const { weekBudget, weekBudgetLeft, monthBudget, monthBudgetLeft, thisWeeksExpenses, thisMonthsExpenses, error, loadBudget } =
+      getBudget();
+    loadBudget();
+
+    return {
+      weekBudget,
+      weekBudgetLeft,
+      monthBudget,
+      monthBudgetLeft,
+      thisMonthsExpenses,
+      thisWeeksExpenses,
+      error
+    };
+  },
   components: {
     UpperNav
+  },
+  methods: {
+    async budgetChange() {
+      const result = await axios
+        .put("http://localhost:3000/budget", {
+          weeklyBudget: this.weekBudget,
+          monthlyBudget: this.monthBudget
+        })
+        .then(() => {
+          this.weekBudgetLeft = this.weekBudget - this.thisWeeksExpenses;
+          this.monthBudgetLeft = this.monthBudget - this.thisMonthsExpenses;
+        });
+    }
   }
 }
 </script>

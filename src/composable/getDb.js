@@ -7,7 +7,7 @@ const getDb = () => {
   const expenses = ref([]);
   const error = ref(null);
 
-  const load = async () => {
+  const loadDb = async () => {
     try {
       let data = await fetch("http://localhost:3000/expenses");
       if (!data.ok) {
@@ -83,7 +83,7 @@ const getDb = () => {
     thisMonthsExpenses,
     thisWeeksExpenses,
     lastMonthsExpenses,
-    load,
+    loadDb,
   };
 };
 

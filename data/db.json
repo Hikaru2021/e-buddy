@@ -1,14 +1,12 @@
 {
-  "budget": [
-    {
-      "weeklyBudget": 2000,
-      "monthlyBudget": 8000
-    }
-  ],
+  "budget": {
+    "weeklyBudget": 1000,
+    "monthlyBudget": 4000
+  },
   "expenses": [
     {
       "name": "asdasd",
-      "type": "Rent",
+      "type": "Housing",
       "date": "2023-06-02T03:47:21.255Z",
       "dateString": "2/2/2023",
       "amount": 2000,
@@ -16,7 +14,7 @@
     },
     {
       "name": "Tomahwak",
-      "type": "Misc.",
+      "type": "Others",
       "date": "2023-06-19T16:00:00.000Z",
       "dateString": "2/20/2023",
       "amount": 120,
@@ -24,7 +22,7 @@
     },
     {
       "name": "isda",
-      "type": "Rent",
+      "type": "Housing",
       "date": "2023-06-25T16:00:00.000Z",
       "dateString": "2/26/2023",
       "amount": 20,
@@ -32,7 +30,7 @@
     },
     {
       "name": "fish",
-      "type": "Rent",
+      "type": "Housing",
       "date": "2023-05-24T16:00:00.000Z",
       "dateString": "2/25/2023",
       "amount": 50,
@@ -48,7 +46,7 @@
     },
     {
       "name": "REnt",
-      "type": "Rent",
+      "type": "Housing",
       "date": "2023-06-30T16:00:00.000Z",
       "dateString": "1/31/2023",
       "amount": 1100,
@@ -56,11 +54,19 @@
     },
     {
       "note": "asd",
-      "type": "category1",
+      "type": "Food",
       "date": "2023-06-12T05:25:33.982Z",
       "dateString": "6/12/2023",
       "amount": 500,
       "id": 7
+    },
+    {
+      "note": "Creamy White",
+      "type": "Food",
+      "date": "2023-06-24T02:34:41.557Z",
+      "dateString": "6/24/2023",
+      "amount": 30,
+      "id": 8
     }
   ]
 }
