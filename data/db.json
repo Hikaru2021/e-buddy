@@ -1,5 +1,8 @@
 {
   "budget": {
+    "weeklyBudget": 100,
+    "monthlyBudget": 100
+  },
   "expenses": [
     {
       "name": "asdasd",
@@ -72,6 +75,22 @@
       "dateString": "6/25/2023",
       "amount": 1200,
       "id": 9
-    }  
+    },
+    {
+      "note": "tEST",
+      "type": "Others",
+      "date": "2023-06-25T06:09:53.018Z",
+      "dateString": "6/25/2023",
+      "amount": 145,
+      "id": 10
+    },
+    {
+      "note": "hello",
+      "type": "Food",
+      "date": "2023-06-25T07:34:22.671Z",
+      "dateString": "6/25/2023",
+      "amount": 200,
+      "id": 11
+    }
   ]
 }
