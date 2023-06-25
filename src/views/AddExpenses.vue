@@ -1,19 +1,19 @@
 <template>
-  <div>
+  <div class="bg-image">
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "Add Expenses" Text -->
-      <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">ADD EXPENSES</h2>
+      <h2 class="text-5xl font-bold mt-4 text-center text-black">ADD EXPENSES</h2>
 
       <!-- Add Expenses Container -->
-      <div class="w-3/4 h-1/2 flex flex-col items-center bg-amber-100 p-10 rounded mt-10">
+      <div class="w-3/4 h-1/2 flex flex-col items-center bg-gray-200 p-10 rounded mt-10">
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Note</h3>
-          <input class="w-full h-7 border-2 border-amber-500 rounded" type="text" required v-model="note" />
+          <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="note" />
         </div>
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Category</h3>
-          <select class="w-full h-7 border-2 border-amber-500 rounded" required v-model="type">
+          <select class="w-full h-7 border-2 border-black rounded" required v-model="type">
             <option value="Food">Food</option>
             <option value="Transport">Transport</option>
             <option value="Housing">Housing</option>
@@ -22,13 +22,13 @@
         </div>
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Amount</h3>
-          <input type="number" class="w-full h-7 border-2 border-amber-500 rounded" required v-model="amount" />
+          <input type="number" class="w-full h-7 border-2 border-black rounded" required v-model="amount" />
         </div>
       </div>
 
       <!-- Add Button -->
       <button @click="navigateToExpensesView"
-        class="bg-amber-500 hover:bg-amber-400 text-white font-bold py-2 px-9 rounded mt-4">
+        class="bg-black hover:opacity-60 text-white font-bold py-2 px-9 rounded mt-4">
         Add
       </button>
     </div>
@@ -69,4 +69,16 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.bg-image {
+    background-image: url('/homebg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  .bg-image .grid {
+    flex-grow: 1;
+  }
+  
+</style>

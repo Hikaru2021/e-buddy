@@ -10,7 +10,7 @@
   <div class="flex flex-col items-center h-screen">
     <div class="flex flex-col items-center">
       <!-- Financial Report Text -->
-      <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">FINANCIAL REPORT</h2>
+      <h2 class="text-5xl font-bold mt-4 text-center text-black">FINANCIAL REPORT</h2>
     </div>
 
     <!-- Financial Report Container -->
@@ -32,12 +32,6 @@
       </button>
     </div>
 
-   <!-- Monthly Chart Placeholder -->
-    <div class="flex justify-center items-center mt-10 w-1/4">
-      <div class="flex justify-center items-center">
-        <Pie v-if="render" :data="month" :options="options" />
-      </div>
-    </div>
 
     <!-- Weekly Charts Container -->
     <div class="flex justify-center m-10" style="width:50%;">

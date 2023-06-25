@@ -23,7 +23,7 @@
     </div>
 
     <!-- Add Expenses Button -->
-    <div class="sticky-container">
+    <div class="sticky-container bg-black">
       <router-link to="/set-reminders" class="image-button">
         <img src="add-expenses.svg" alt="Image Button" class="h-10 w-10" />
       </router-link>

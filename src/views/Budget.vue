@@ -8,17 +8,17 @@
  -->
 
 <template>
-  <div>
+  <div class="bg-image">
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "BUDGET" Text -->
-      <h2 class="text-5xl font-bold mt-4 text-center text-black">BUDGET</h2>
+      <h2 class="text-5xl font-bold text-center text-black">BUDGET</h2>
 
       <!-- Budget Tracker Container -->
       <div class="border border-black rounded-lg p-5 mt-20 w-4/5">
         <div class="flex items-center justify-between">
-          <h3 class="text-lg font-bold text-amber-500">Weekly Budget</h3>
-          <input type="number" class="text-lg text-right border-b border-amber-500 pb-1" v-on:change="budgetChange"
+          <h3 class="text-lg font-bold text-black">Weekly Budget</h3>
+          <input type="number" class="text-lg text-right border-b border-black pb-1" v-on:change="budgetChange"
             required v-model="weekBudget" />
         </div>
         <div class="flex items-center justify-between mt-2">
@@ -26,8 +26,8 @@
           <p class="text-lg text-right">{{ weekBudgetLeft }}</p>
         </div>
         <div class="flex items-center justify-between mt-4">
-          <h3 class="text-lg font-bold text-amber-500">Monthly Budget</h3>
-          <input type="number" class="text-lg text-right border-b border-amber-500 pb-1" v-on:change="budgetChange"
+          <h3 class="text-lg font-bold text-black">Monthly Budget</h3>
+          <input type="number" class="text-lg text-right border-b border-black pb-1" v-on:change="budgetChange"
             required v-model="monthBudget" />
         </div>
         <div class="flex items-center justify-between mt-2">
@@ -78,3 +78,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.bg-image {
+    background-image: url('/homebg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  .bg-image .grid {
+    flex-grow: 1;
+  }
+</style>
