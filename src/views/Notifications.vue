@@ -1,28 +1,33 @@
 <template>
-  <div>
+  <div class="bg-black h-12 flex justify-center">
     <!-- Upper Buttons -->
-    <div class="flex justify-between items-center mb-4">
+    <div class="flex justify-between w-full">
       <!-- Back Button -->
       <button @click="goBack" class="text-blue-500 hover:text-blue-700 flex items-center">
-        <img src="back.svg" alt="Back" class="w-10 h-10 m-5" />
+        <img src="back.svg" alt="Back" class="w-8 h-8 m-5" />
       </button>
 
+      <!-- Empty Space (to push the buttons apart) -->
+      <div class="flex-grow"></div>
+
       <!-- Read All Button -->
-      <button @click="markAllAsRead" class="text-green-500 hover:text-green-700 flex items-center">
+      <button @click="markAllAsRead" class="text-green-500 hover:text-amber-400 flex items-center">
         <img src="read-all.svg" alt="Read All" class="w-10 h-10 m-5" />
       </button>
     </div>
+  </div>
 
-    <!-- Notification Content -->
-    <div class="notification-content">
-      <NotificationBox
-        v-for="notification in notifications"
-        :key="notification.id"
-        :notification="notification"
-      />
-    </div>
+  <!-- Notification Content -->
+  <div class="notification-content mt-4">
+    <NotificationBox
+      v-for="notification in notifications"
+      :key="notification.id"
+      :notification="notification"
+    />
   </div>
 </template>
+
+
 
 <script>
 import NotificationBox from '@/components/NotificationBox.vue'

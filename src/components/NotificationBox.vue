@@ -8,13 +8,13 @@
 <template>
   <div class="notification-box">
     <div
-      class="border-2 border-amber-400 rounded-md flex items-center justify-between p-5 w-95 h-20 ml-10 mr-10 mb-2"
+      class="border-2 border-black rounded-md flex items-center justify-between p-5 w-95 h-20 ml-10 mr-10 mb-2"
     >
       <div class="flex flex-col">
-        <p class="text-left font-bold text-amber-500">{{ notification.title }}</p>
+        <p class="text-left font-bold text-red-500">{{ notification.title }}</p>
         <p class="text-left font-medium">{{ notification.due }}</p>
       </div>
-      <p class="text-left font-bold text-amber-500">{{ notification.amount }}</p>
+      <p class="text-left font-bold text-red-500">{{ notification.amount }}</p>
     </div>
   </div>
 </template>
