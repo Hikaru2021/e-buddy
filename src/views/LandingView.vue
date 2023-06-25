@@ -13,7 +13,7 @@
         <router-link
           to="/register"
           tag="button"
-          class="inline-flex items-center mt-72 px-6 py-4 font-semibold border-2 border-white text-white text-2xl transition-all duration-200 bg-black rounded-full lg:mt-16 hover:bg-yellow-400 focus:bg-pink-900 shadow-lg"
+          class="inline-flex items-center mt-72 px-6 py-4 font-semibold border-2 border-white text-white text-2xl transition-all duration-200 bg-black rounded-full lg:mt-16 hover:opacity-80 focus:opacity-80 focus:bg-pink-900 shadow-lg"
         >
           GET STARTED FOR FREE
           <svg

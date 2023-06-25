@@ -1,14 +1,15 @@
-<!-- WORK HERE, EXPENSES TABLE -->
 <template>
   <div>
-    <upper-nav></upper-nav>
+    <UpperNav></UpperNav>
     <div class="flex flex-col items-center">
       <!-- Expenses Text -->
       <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">EXPENSES</h2>
     </div>
 
     <!-- Expenses Table -->
-    <div></div>
+    <div>
+    
+    </div>
 
     <!-- Add Expenses Button -->
     <div class="sticky-container">
@@ -20,13 +21,13 @@
 </template>
 
 <script>
-import UpperNav from '@/components/UpperNav.vue'
+import UpperNav from '@/components/UpperNav.vue';
 
-export default {
+export default{
   components: {
-    UpperNav
-  }
-}
+    UpperNav,
+  },
+};
 </script>
 
 <style>

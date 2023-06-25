@@ -54,7 +54,7 @@ export default {
 <template>
   <div>
     <!-- Upper Buttons -->
-    <div class="sticky-buttons flex justify-between items-end px-4 py-3 bg-black shadow-lg">
+    <div class="sticky-buttons flex justify-between items-end px-4 bg-black shadow-lg">
       <div>
         <side-nav></side-nav>
       </div>
@@ -114,7 +114,6 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 1rem 1rem 0;
 }
 
 .image-button {
