@@ -59,6 +59,10 @@ export default {
         <side-nav></side-nav>
       </div>
       <div>
+        <img class="block lg:hidden h-8 w-auto" src="/logo2.png" alt="Logo">
+        <img class="hidden lg:block p-1 h-14 w-auto" src="/logo2.png" alt="Logo">
+      </div>
+      <div>
         <button @click="navigateTo('/notifications')" class="bg-transparent border-none">
           <img src="notification.svg" alt="Right Button" class="h-10 w-10" />
         </button>
@@ -69,13 +73,13 @@ export default {
     <div class="flex flex-col justify-center items-center h-screen bg-image">
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
-        class="clickable-card text-center border border-black rounded-2xl p-3 mb-2 shadow-md">
+        class="clickable-card text-center border border-black rounded-2xl p-3 mb-2 shadow-lg">
         <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Budget</h2>
         <p class="text-xl">{{ monthBudgetLeft }}</p>
       </div>
       <!-- Expenses -->
       <div @click="navigateTo('/expenses-view')"
-        class="clickable-card text-center border border-black rounded-2xl p-8">
+        class="clickable-card text-center border border-black rounded-2xl p-8 shadow-lg">
         <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
         <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
