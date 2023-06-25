@@ -91,6 +91,14 @@
       "dateString": "6/25/2023",
       "amount": 200,
       "id": 11
+    },
+    {
+      "note": "true",
+      "type": "Transport",
+      "date": "2023-06-25T07:46:59.236Z",
+      "dateString": "6/25/2023",
+      "amount": 17,
+      "id": 12
     }
   ]
 }
