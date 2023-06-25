@@ -1,5 +1,8 @@
 {
   "budget": {
+    "weeklyBudget": 1000,
+    "monthlyBudget": 4000
+  },
   "expenses": [
     {
       "name": "asdasd",
@@ -72,6 +75,6 @@
       "dateString": "6/25/2023",
       "amount": 1200,
       "id": 9
-    }  
+    }
   ]
 }
