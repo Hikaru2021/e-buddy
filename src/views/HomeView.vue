@@ -66,7 +66,7 @@ export default {
     </div>
 
     <!-- Budget & Expenses Container -->
-    <div class="flex flex-col justify-center items-center h-screen bg-white">
+    <div class="flex flex-col justify-center items-center h-screen bg-image">
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
         class="clickable-card text-center border border-black rounded-2xl p-3 mb-2 shadow-md">
