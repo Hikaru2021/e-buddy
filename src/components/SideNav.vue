@@ -7,39 +7,34 @@
 
     <!-- Side Navigation Bar -->
     <div v-if="showSideNav" class="fixed top-0 left-0 h-screen w-60 bg-gray-100 pt-1 z-10">
-      <button
-        @click="showSideNav = !showSideNav"
-        class="flex items-center justify-end p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border"
-      >
+      <button @click="showSideNav = !showSideNav"
+        class="flex items-center justify-end p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border">
         <img src="doublearrowleft.svg" alt="Navigation Bar" class="nav-bar-icon" />
       </button>
-      <button
-        @click="navigateTo('/budget')"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border"
-      >
+      <button @click="navigateTo('/budget')"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border">
         <img src="budget.svg" alt="Budget Icon" class="nav-bar-icon" />
         <span class="ml-2">Budget</span>
       </button>
-      <button
-        @click="navigateTo('/bill-reminders')"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border"
-      >
+      <button @click="navigateTo('/bill-reminders')"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border">
         <img src="bill-reminder.svg" alt="Bill Reminders Icon" class="nav-bar-icon" />
         <span class="ml-2">Bills Reminder</span>
       </button>
-      <button
-        @click="navigateTo('/view-financial-report')"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border"
-      >
+      <button @click="navigateTo('/view-financial-report')"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border">
         <img src="financial-report.svg" alt="Financial Report Icon" class="nav-bar-icon" />
         <span class="ml-2">View Financial Report</span>
       </button>
-      <button
-        @click="navigateTo('/about')"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border"
-      >
+      <button @click="navigateTo('/about')"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border">
         <img src="about.svg" alt="About Icon" class="nav-bar-icon" />
         <span class="ml-2">About</span>
+      </button>
+      <button @click="navigateTo('/')"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border">
+        <img src="logout.svg" alt="About Icon" class="nav-bar-icon" />
+        <span class="ml-2">Log-Out</span>
       </button>
     </div>
   </div>
