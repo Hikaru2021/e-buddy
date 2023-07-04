@@ -32,9 +32,9 @@
         <span class="ml-2">About</span>
       </button>
       <button @click="navigateTo('/')"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border">
-        <img src="logout.svg" alt="About Icon" class="nav-bar-icon" />
-        <span class="ml-2">Log-Out</span>
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border ml-2">
+        <img src="logout.svg" alt="About Icon" class="nav-bar-icon mr-1 w-7 h-7" />
+        <span class="ml-2">Logout</span>
       </button>
     </div>
   </div>
