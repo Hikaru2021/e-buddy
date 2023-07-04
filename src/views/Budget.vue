@@ -3,10 +3,10 @@
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "BUDGET" Text -->
-      <h2 class="text-5xl font-bold text-center text-black">BUDGET</h2>
+      <h2 class="text-5xl p-12 font-bold text-black">Add Budget</h2>
 
       <!-- Budget Tracker Container -->
-      <div class="border border-black rounded-lg p-5 mt-20 w-4/5">
+      <div class="border border-black rounded-lg p-12 mt-20 w-2/5 bg-slate-100">
         <div v-for="(budget, index) in budgets" :key="index">
           <div class="flex items-center justify-between">
             <h3 class="text-lg font-bold text-black">Category</h3>
@@ -19,7 +19,7 @@
             </select>
           </div>
           <div v-if="budget.category === 'Others'" class="flex items-center justify-between mt-2">
-            <h3 class="text-lg font-medium">Specify</h3>
+            <h3 class="text-lg font-medium">If others, please specify</h3>
             <input type="text" class="text-lg text-right border-b border-black pb-1 w-1/4" v-model="budget.specifyCategory" />
           </div>
           <div class="flex items-center justify-between mt-2">
