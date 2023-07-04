@@ -1,8 +1,46 @@
-<!-- NOTES:
+<template>
+  <div>
+    <!-- Upper Buttons -->
+    <div class="sticky-buttons flex justify-between items-end px-4 bg-black shadow-lg">
+      <div>
+        <side-nav></side-nav>
+      </div>
+      <div>
+        <button @click="navigateTo('/notifications')" class="bg-transparent border-none">
+          <i class="fas fa-bell text-white text-3xl pr-10 pb-1 pt-1"></i>
+        </button>
+      </div>
+    </div>
 
-  Enhance the UI design.
-  
- -->
+    <!-- Budget & Expenses Container -->
+    <div :class="{ 'container-open': showSideNav }" class="flex flex-col items-center h-screen bg-image mt-10">
+      <!-- Budget -->
+      <div @click="navigateTo('/budget')"
+        class="clickable-card text-center border border-black rounded-2xl py-5 px-5 mb-2 shadow-md hover:shadow-highlight">
+        <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Remaining Balance</h2>
+        <p class="text-xl">{{ monthBudgetLeft }}</p>
+      </div>
+      <!-- Expenses -->
+      <div @click="navigateTo('/expenses-view')"
+        class="clickable-card text-center border border-black rounded-2xl px-20 py-8 hover:shadow-highlight">
+        <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
+        <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
+        <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
+        <p class="text-xl p-2">{{ thisMonthsExpenses }}</p>
+        <h2 class="text-2xl font-bold mb-1">Last Month's Expenses</h2>
+        <p class="text-xl">{{ lastMonthsExpenses }}</p>
+      </div>
+
+      <!-- Add Expenses Button -->
+      <div class="bg-black flex justify-center mt-2 px-20 py-2 rounded-full">
+        <router-link to="/add-expenses" class="image-button">
+          <i class="fas fa-plus text-white text-3xl"></i>
+        </router-link>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script>
 import AddExpenses from '@/views/AddExpenses.vue'
 import Budget from '@/views/Budget.vue'
@@ -34,6 +72,7 @@ export default {
       lastMonthsExpenses,
       monthBudgetLeft,
       error,
+      showSideNav: true // Set showSideNav to true by default
     };
   },
   components: {
@@ -51,59 +90,18 @@ export default {
 }
 </script>
 
-<template>
-  <div>
-    <!-- Upper Buttons -->
-    <div class="sticky-buttons flex justify-between items-end px-4 bg-black shadow-lg">
-      <div>
-        <side-nav></side-nav>
-      </div>
-      <div>
-        <button @click="navigateTo('/notifications')" class="bg-transparent border-none">
-          <img src="notification.svg" alt="Right Button" class="h-10 w-10" />
-        </button>
-      </div>
-    </div>
-
-    <!-- Budget & Expenses Container -->
-    <div class="flex flex-col justify-center items-center h-screen bg-image">
-      <!-- Budget -->
-      <div @click="navigateTo('/budget')"
-        class="clickable-card text-center border border-black rounded-2xl p-3 mb-2 shadow-md">
-        <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Budget</h2>
-        <p class="text-xl">{{ monthBudgetLeft }}</p>
-      </div>
-      <!-- Expenses -->
-      <div @click="navigateTo('/expenses-view')"
-        class="clickable-card text-center border border-black rounded-2xl p-8">
-        <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
-        <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
-        <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
-        <p class="text-xl p-2">{{ thisMonthsExpenses }}</p>
-        <h2 class="text-2xl font-bold mb-1">Last Month's Expenses</h2>
-        <p class="text-xl">{{ lastMonthsExpenses }}</p>
-      </div>
-    </div>
-
-    <!-- Add Expenses Button -->
-    <div class="sticky-container bg-black">
-      <router-link to="/add-expenses" class="image-button">
-        <img src="add-expenses.svg" alt="Image Button" class="h-10 w-10" />
-      </router-link>
-    </div>
-  </div>
-</template>
-
 <style>
 .sticky-container {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
   display: flex;
-  justify-content: center;
+  width: 50%;
   padding: 10px;
   background-color: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .sticky-buttons {
@@ -139,4 +137,13 @@ export default {
   .shadow-lg {
     box-shadow: 0 5px 7px rgba(80, 79, 79, 0.1), 0 5px 7px rgba(93, 93, 93, 0.6);
   }
+
+  .hover\:shadow-highlight:hover {
+  box-shadow: 5px 5px 5px rgba(255, 215, 0, 0.6), 0 5px 7px rgba(80, 79, 79, 0.1);
+}
+
+.container-open {
+  margin-left: 60px; 
+  transition: margin-left 0.3s ease-in-out; 
+}
 </style>
