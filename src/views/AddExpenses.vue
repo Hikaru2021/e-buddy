@@ -7,12 +7,12 @@
       <h2 class="text-5xl font-bold mt-4 text-center text-black">ADD EXPENSES</h2>
 
       <!-- Add Expenses Container -->
-      <div class="border border-black rounded-lg p-12 mt-20 w-2/5 bg-slate-100">
+      <div class="border border-black rounded-lg p-12 mt-5 w-2/5 bg-slate-100 flex flex-col justify-center items-center"> <!-- Added flex, justify-center, and items-center classes -->
         <div class="w-2/3 flex flex-col mb-4">
-          <h3 class="text-lg font-bold mb-2">Amount</h3>
+          <h3 class="text-lg font-bold items-center mb-2">Amount</h3>
           <div class="flex items-center">
             <select class="h-7 border-2 border-black rounded-l pl-2" required v-model="currency">
-              <option value="Php">Php</option>
+              <option value="Php">₱ </option>
               <option value="$">$</option>
               <option value="€">€</option>
               <option value="¥">¥</option>
@@ -50,12 +50,13 @@
 
       <!-- Add Button -->
       <button @click="navigateToExpensesView"
-        class="bg-black hover:opacity-60 text-white font-bold py-2 px-9 rounded mt-4">
+        class="bg-black hover:opacity-60 text-white font-bold py-2 px-9 rounded mt-2">
         Add
       </button>
     </div>
   </div>
 </template>
+
 
 <script>
 import UpperNav from '@/components/UpperNav.vue'

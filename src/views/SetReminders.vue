@@ -27,7 +27,7 @@
           <h3 class="text-lg font-bold">Amount:</h3>
           <input
             type="number"
-            class="ml-auto w-40 h-7 border-2 border-amber-500 rounded text-right"
+            class="ml-auto w-40 h-7 border-2 border-black rounded text-right"
           />
         </div>
 
@@ -36,7 +36,7 @@
           <h3 class="text-lg font-bold">Date:</h3>
           <input
             type="date"
-            class="ml-auto w-40 h-7 border-2 border-amber-500 rounded text-right"
+            class="ml-auto w-40 h-7 border-2 border-black rounded text-right"
           />
         </div>
 
@@ -45,7 +45,7 @@
           <h3 class="text-lg font-bold">Time:</h3>
           <input
             type="time"
-            class="ml-auto w-40 h-7 border-2 border-amber-500 rounded text-right"
+            class="ml-auto w-40 h-7 border-2 border-black rounded text-right"
           />
         </div>
       </div>
@@ -53,7 +53,7 @@
       <!-- Save Button -->
       <router-link
         to="/bill-reminders"
-        class="bg-amber-500 hover:bg-amber-400 text-white font-bold py-2 px-9 rounded mt-4"
+        class="bg-black hover:bg-amber-400 text-white font-bold py-2 px-9 rounded mt-4"
       >
         Save
       </router-link>
