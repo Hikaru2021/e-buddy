@@ -3,7 +3,7 @@
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "Add Expenses" Text -->
-      <h2 class="text-5xl font-bold p-12 text-center text-black">Add Expenses</h2>
+      <h2 class="text-5xl font-bold mt-4 text-center text-black">ADD EXPENSES</h2>
 
       <!-- Add Expenses Container -->
       <div class="border border-black rounded-lg p-12 mt-20 w-2/5 bg-slate-100">
@@ -20,13 +20,14 @@
             <option value="Others">Others</option>
           </select>
         </div>
+        <div v-if="type === 'Others'" class="w-2/3 flex flex-col mb-4">
+          <h3 class="text-lg font-bold mb-2">Category (Specify)</h3>
+          <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="otherCategory" />
+        </div>
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Note</h3>
           <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="note" />
         </div>
-        <div class="w-2/3 flex flex-col mb-4">
-          <h3 class="text-lg font-bold mb-2">Amount</h3>
-          <input type="number" class="w-full h-7 border-2 border-black rounded" required v-model="amount" />
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Payment Type</h3>
           <select class="w-full h-7 border-2 border-black rounded" required v-model="paymentType">
@@ -58,7 +59,8 @@ export default {
     const amount = ref();
     const date = ref(new Date());
     const paymentType = ref();
-    return { note, type, amount, date, paymentType };
+    const otherCategory = ref();
+    return { note, type, amount, date, paymentType, otherCategory };
   },
   components: {
     UpperNav
@@ -70,7 +72,7 @@ export default {
     async navigateToExpensesView() {
       let result = await axios.post("http://localhost:3000/expenses", {
         note: this.note,
-        type: this.type,
+        type: this.type === 'Others' ? this.otherCategory : this.type,
         date: this.date,
         dateString: this.date.toLocaleDateString(),
         amount: this.amount,
