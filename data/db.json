@@ -2,13 +2,13 @@
   "budget": {
     "budgets": [
       {
-        "category": "Food",
+        "category": "Choose",
         "specifyCategory": "",
-        "paymentType": "Cash",
+        "paymentType": "Choose",
         "currency": "$",
-        "amount": 500,
-        "timeline": "Jan",
-        "note": "22"
+        "amount": "",
+        "timeline": "",
+        "note": ""
       }
     ]
   },
@@ -192,6 +192,11 @@
       "date": "2023-07-05T08:11:10.547Z",
       "dateString": "7/5/2023",
       "id": 14
+    },
+    {
+      "date": "2023-07-05T09:22:22.848Z",
+      "dateString": "7/5/2023",
+      "id": 15
     }
   ]
 }
