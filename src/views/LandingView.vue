@@ -1,5 +1,6 @@
 <template>
   <div class="bg-image">
+    
     <LandPageNav />
     <div class="flex flex-grow items-start justify-start">
       <div class="ml-32 mt-32">
@@ -49,6 +50,7 @@ export default {
       this.$router.push({ name: 'login' });
     },
   },
+  
 };
 </script>
   

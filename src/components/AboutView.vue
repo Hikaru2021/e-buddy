@@ -1,6 +1,6 @@
 <template>
-  <div class="ml-24">
-    <!-- <upper-nav></upper-nav> -->
+  <div>
+    <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "Developers" Text -->
       <h2 class="text-5xl font-bold mt-4 text-center text-black">DEVELOPERS</h2>
@@ -65,5 +65,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>

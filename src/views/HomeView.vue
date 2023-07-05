@@ -1,41 +1,31 @@
 <template>
-  <div>
+  <div class="flex flex-col justify-center items-center h-screen bg-image">
     <!-- Upper Buttons -->
-    <div class="sticky-buttons flex justify-between items-end px-4 bg-black shadow-lg">
-      <div>
-        <side-nav></side-nav>
-      </div>
-      <div>
-        <button @click="navigateTo('/notifications')" class="bg-transparent border-none">
-          <i class="fas fa-bell text-white text-3xl pr-10 pb-1 pt-1"></i>
-        </button>
-      </div>
+    <div>
+      <!-- <side-nav></side-nav> -->
     </div>
 
-     <!-- Budget & Expenses Container -->
-     <div class="flex flex-col justify-center items-center h-screen bg-image">
+    <!-- Budget & Expenses Container -->
+    <div>
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
         class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl p-3 pl-9 pr-9 mb-6 shadow-lg">
         <h2 class="text-2xl font-bold mb-1 pl-8">Remaining Balance</h2>
-
         <p class="text-xl">{{ monthBudgetLeft }}</p>
       </div>
       <!-- Expenses -->
       <div @click="navigateTo('/expenses-view')"
-
-        class="clickable-card text-center border border-black rounded-2xl px-20 py-8 hover:shadow-highlight">
+        class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl pl-7 pr-7 pt-5 pb-4 shadow-lg">
         <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
         <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
         <p class="text-xl p-2">{{ thisMonthsExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">Last Month's Expenses</h2>
-
-        <p class="text-xl">{{ lastMonthsExpenses }}</p>
+        <p class="text-xl p-2">{{ lastMonthsExpenses }}</p>
       </div>
 
       <!-- Add Expenses Button -->
-      <div class="bg-black flex justify-center clickable-card  mt-5 px-20 py-2 rounded-full transform duration-500 hover:scale-110">
+      <div class="bg-black flex justify-center mt-2 px-20 py-2 rounded-full hover:scale-110">
         <router-link to="/add-expenses" class="image-button">
           <i class="fas fa-plus text-white text-3xl"></i>
         </router-link>
@@ -43,6 +33,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import AddExpenses from '@/views/AddExpenses.vue'

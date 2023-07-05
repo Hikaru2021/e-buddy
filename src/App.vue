@@ -1,11 +1,18 @@
 <template>
-  <RouterView />
-  <!-- <HomeView /> -->
+  <div>
+    <side-nav></side-nav>
+    <router-view></router-view>
+  </div>
 </template>
 
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-//import HomeView from './views/HomeView.vue'
+<script>
+import SideNav from '@/components/SideNav.vue'
+
+export default {
+  components: {
+    SideNav
+  }
+}
 </script>
 
 <style>
