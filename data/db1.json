@@ -1,14 +1,14 @@
 {
   "budget": {
-    "weeklyBudget": 100,
-    "monthlyBudget": 100
+    "weeklyBudget": 3000,
+    "monthlyBudget": 10000
   },
   "expenses": [
     {
       "name": "asdasd",
       "type": "Housing",
       "date": "2023-06-02T03:47:21.255Z",
-      "dateString": "2/2/2023",
+      "dateString": "6/2/2023",
       "amount": 2000,
       "id": 1
     },
@@ -16,7 +16,7 @@
       "name": "Tomahwak",
       "type": "Others",
       "date": "2023-06-19T16:00:00.000Z",
-      "dateString": "2/20/2023",
+      "dateString": "6/20/2023",
       "amount": 120,
       "id": 2
     },
@@ -24,7 +24,7 @@
       "name": "isda",
       "type": "Housing",
       "date": "2023-06-25T16:00:00.000Z",
-      "dateString": "2/26/2023",
+      "dateString": "6/25/2023",
       "amount": 20,
       "id": 3
     },
@@ -83,6 +83,54 @@
       "dateString": "6/25/2023",
       "amount": 145,
       "id": 10
+    },
+    {
+      "note": "hello",
+      "type": "Food",
+      "date": "2023-06-25T07:34:22.671Z",
+      "dateString": "6/25/2023",
+      "amount": 200,
+      "id": 11
+    },
+    {
+      "note": "true",
+      "type": "Transport",
+      "date": "2023-06-25T07:46:59.236Z",
+      "dateString": "6/25/2023",
+      "amount": 17,
+      "id": 12
+    },
+    {
+      "note": "awd",
+      "type": "Transport",
+      "date": "2023-06-25T08:35:07.373Z",
+      "dateString": "6/25/2023",
+      "amount": 234,
+      "id": 13
+    },
+    {
+      "note": "gabas",
+      "type": "Transport",
+      "date": "2023-06-25T08:41:20.991Z",
+      "dateString": "6/25/2023",
+      "amount": 25,
+      "id": 14
+    },
+    {
+      "note": "marcos",
+      "type": "Transport",
+      "date": "2023-06-25T08:41:26.338Z",
+      "dateString": "6/25/2023",
+      "amount": 35,
+      "id": 15
+    },
+    {
+      "note": "Toilet paper",
+      "type": "Others",
+      "date": "2023-06-25T11:45:44.961Z",
+      "dateString": "6/25/2023",
+      "amount": 20,
+      "id": 16
     }
   ]
 }

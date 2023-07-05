@@ -1,4 +1,0 @@
-
-<template>
-    TEST
-</template>
