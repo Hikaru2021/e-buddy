@@ -33,7 +33,7 @@
     
 
       <!-- Add Expenses Button -->
-      <div class="bg-black flex justify-center mt-2 px-20 py-2 rounded-full">
+      <div class="bg-black flex justify-center mt-2 px-20 py-2 rounded-full hover:scale-110">
         <router-link to="/add-expenses" class="image-button">
           <i class="fas fa-plus text-white text-3xl"></i>
         </router-link>
