@@ -1,7 +1,16 @@
 {
   "budget": {
-    "weeklyBudget": 100,
-    "monthlyBudget": 100
+    "budgets": [
+      {
+        "category": "Food",
+        "specifyCategory": "",
+        "paymentType": "Cash",
+        "currency": "$",
+        "amount": 500,
+        "timeline": "Jan",
+        "note": "22"
+      }
+    ]
   },
   "expenses": [
     {

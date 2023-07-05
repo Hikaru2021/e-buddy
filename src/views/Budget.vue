@@ -55,7 +55,7 @@
           <hr class="my-4">
          <!-- Confirm Button -->
         <div class="flex justify-end mt-4">
-          <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" @click="saveBudget">
+          <button class="bg-black hover:opacity-80 text-white font-bold py-2 px-4 rounded" @click="saveBudget">
             Confirm
           </button>
         </div>
