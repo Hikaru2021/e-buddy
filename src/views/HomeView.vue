@@ -1,56 +1,3 @@
-<!-- NOTES:
-
-  Enhance the UI design.
-  
- -->
-<script>
-import AddExpenses from '@/views/AddExpenses.vue'
-import Budget from '@/views/Budget.vue'
-import ExpensesView from '@/views/ExpensesView.vue'
-import SideNav from '@/components/SideNav.vue'
-import Notifications from '@/views/Notifications.vue'
-import getDb from "@/composable/getDb.js";
-import getMonthBudget from '@/composable/getMonthBudget.js'
-
-export default {
-  setup() {
-    const {
-      expenses,
-      error,
-      thisMonthsExpenses,
-      thisWeeksExpenses,
-      lastMonthsExpenses,
-      loadDb,
-    } = getDb();
-    loadDb();
-
-    const { monthBudgetLeft, loadMonthBudget } = getMonthBudget();
-    loadMonthBudget();
-
-    return {
-      expenses,
-      thisMonthsExpenses,
-      thisWeeksExpenses,
-      lastMonthsExpenses,
-      monthBudgetLeft,
-      error,
-    };
-  },
-  components: {
-    AddExpenses,
-    Budget,
-    ExpensesView,
-    SideNav,
-    Notifications
-  },
-  methods: {
-    navigateTo(route) {
-      this.$router.push(route)
-    }
-  }
-}
-</script>
-
 <template>
   <div>
     <!-- Upper Buttons -->
@@ -69,8 +16,11 @@ export default {
       </div>
     </div>
 
+    <!-- Particles Background -->
+    <div id="particles" class="particles-container"></div>
+
     <!-- Budget & Expenses Container -->
-    <div class="flex flex-col justify-center items-center h-screen bg-image">
+    <div class="flex flex-col justify-center items-center h-screen">
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
         class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl p-3 pl-9 pr-9 mb-6 shadow-lg">
@@ -97,6 +47,157 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+import AddExpenses from '@/views/AddExpenses.vue'
+import Budget from '@/views/Budget.vue'
+import ExpensesView from '@/views/ExpensesView.vue'
+import SideNav from '@/components/SideNav.vue'
+import Notifications from '@/views/Notifications.vue'
+import getDb from "@/composable/getDb.js";
+import getMonthBudget from '@/composable/getMonthBudget.js'
+
+export default {
+  mounted() {
+    this.initializeParticles();
+  },
+  methods: {
+    initializeParticles() {
+      particlesJS("particles", {
+        particles: {
+          number: {
+            value: 100,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          color: {
+            value: "#ffffff"
+          },
+          shape: {
+            type: "star",
+            stroke: {
+              width: 0,
+              color: "#000000"
+            },
+            polygon: {
+              nb_sides: 5
+            }
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false
+            }
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
+              sync: false
+            }
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200
+            }
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse"
+            },
+            onclick: {
+              enable: true,
+              mode: "push"
+            },
+            resize: true
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1
+              }
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3
+            },
+            repulse: {
+              distance: 100,
+              duration: 0.4
+            },
+            push: {
+              particles_nb: 4
+            },
+            remove: {
+              particles_nb: 2
+            }
+          }
+        },
+        retina_detect: true
+      });
+    },
+    navigateTo(route) {
+      this.$router.push(route)
+    }
+  },
+  components: {
+    AddExpenses,
+    Budget,
+    ExpensesView,
+    SideNav,
+    Notifications
+  },
+  setup() {
+    const {
+      expenses,
+      error,
+      thisMonthsExpenses,
+      thisWeeksExpenses,
+      lastMonthsExpenses,
+      loadDb,
+    } = getDb();
+    loadDb();
+
+    const { monthBudgetLeft, loadMonthBudget } = getMonthBudget();
+    loadMonthBudget();
+
+    return {
+      expenses,
+      thisMonthsExpenses,
+      thisWeeksExpenses,
+      lastMonthsExpenses,
+      monthBudgetLeft,
+      error,
+    };
+  },
+}
+</script>
 
 <style>
 .sticky-container {
@@ -129,18 +230,27 @@ export default {
   cursor: pointer;
 }
 
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 .bg-image {
-    background-image: url('/homebg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-  }
-  
-  .bg-image .grid {
-    flex-grow: 1;
-  }
-  
-  .shadow-lg {
-    box-shadow: 0 5px 7px rgba(80, 79, 79, 0.1), 0 5px 7px rgba(93, 93, 93, 0.6);
-  }
+  background-image: url('/homebg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.bg-image .grid {
+  flex-grow: 1;
+}
+
+.shadow-lg {
+  box-shadow: 0 5px 7px rgba(80, 79, 79, 0.1), 0 5px 7px rgba(93, 93, 93, 0.6);
+}
 </style>
