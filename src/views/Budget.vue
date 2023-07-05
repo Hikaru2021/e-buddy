@@ -36,10 +36,10 @@
                 <h3 class="text-lg font-medium">Amount</h3>
                 <div class="flex items-center">
                   <select class="h-7 border-2 border-black rounded-l pl-2" required v-model="budget.currency">
-                    <option value="$">₱ </option>
-                    <option value="$">$ </option>
-                    <option value="€">€ </option>
-                    <option value="¥">¥ </option>
+                    <option value="PHP">PHP(₱)</option>
+                    <option value="USD">USD($)</option>
+                    <option value="EUR">EUR(€)</option>
+                    <option value="JPY">JPY(¥)</option>
                     <!-- Add more currency options as needed -->
                   </select>
                   <input type="number" class="w-full h-7 border-2 border-black rounded-r" required v-model="budget.amount" step="0.01" />

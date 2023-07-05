@@ -12,10 +12,10 @@
           <h3 class="text-lg font-bold items-center mb-2">Amount</h3>
           <div class="flex items-center">
             <select class="h-7 border-2 border-black rounded-l pl-2" required v-model="currency">
-              <option value="Php">₱ </option>
-              <option value="$">$</option>
-              <option value="€">€</option>
-              <option value="¥">¥</option>
+              <option value="PHP">PHP(₱)</option>
+              <option value="USD">USD($)</option>
+              <option value="EUR">EUR(€)</option>
+              <option value="JPY">JPY(¥)</option>
               <!-- Add more currency options as needed -->
             </select>
             <input type="number" class="w-full h-7 border-2 border-black rounded-r" required v-model="amount" step="0.01" />
@@ -71,7 +71,7 @@ export default {
     const date = ref(new Date());
     const paymentType = ref();
     const otherCategory = ref();
-    const currency = ref('Php'); // Set the default currency here
+    const currency = ref('PHP'); // Set the default currency here
     return { note, type, amount, date, paymentType, otherCategory, currency };
   },
   components: {
