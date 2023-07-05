@@ -1,107 +1,85 @@
-<template>
+<!-- 
+    NOTE:
+
+    Please make the numbers editable. 
+    If the user click the numbers on Weekly and Monthly Budget, pwede niya maedit ang numbers. 
+    Then it will be saved and reflected mismo sa screen.
+    The Amount Left, expenses minus budget sya.
+ -->
+
+ <template>
   <div class="bg-image">
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "BUDGET" Text -->
-      <h2 class="text-5xl p-12 font-bold text-black">Add Budget</h2>
+      <h2 class="text-5xl font-bold text-center text-black">BUDGET</h2>
 
       <!-- Budget Tracker Container -->
-      <div class="border border-black rounded-lg p-12 mt-20 w-2/5 bg-slate-100">
-        <div v-for="(budget, index) in budgets" :key="index">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-bold text-black">Category</h3>
-            <select v-model="budget.category" class="text-lg text-right border-b border-black pb-1 w-1/4">
-              <option value="Choose">Choose</option>
-              <option value="Food">Food</option>
-              <option value="Transportation">Transportation</option>
-              <option value="Housing">Housing</option>
-              <option value="Others">Others</option>
-            </select>
-          </div>
-          <div v-if="budget.category === 'Others'" class="flex items-center justify-between mt-2">
-            <h3 class="text-lg font-medium">If others, please specify</h3>
-            <input type="text" class="text-lg text-right border-b border-black pb-1 w-1/4" v-model="budget.specifyCategory" />
-          </div>
-          <div class="flex items-center justify-between mt-2">
-            <h3 class="text-lg font-medium">Payment Type</h3>
-            <select v-model="budget.paymentType" class="text-lg text-right border-b border-black pb-1 w-1/4">
-              <option value="Choose">Choose</option>
-              <option value="Cash">Cash</option>
-              <option value="Card">Card</option>
-              <option value="Savings">Savings</option>
-            </select>
-          </div>
-          <div class="flex items-center justify-between mt-2">
-            <h3 class="text-lg font-medium">Amount</h3>
-            <div class="flex items-center">
-              <select class="h-7 border-2 border-black rounded-l pl-2" required v-model="budget.currency">
-                <option value="Php">Php</option>
-                <option value="$">$</option>
-                <option value="€">€</option>
-                <option value="¥">¥</option>
-                <!-- Add more currency options as needed -->
-              </select>
-              <input type="number" class="w-full h-7 border-2 border-black rounded-r text-right" required v-model="budget.amount" step="0.01" />
-            </div>
-          </div>
-          <div class="flex items-center justify-between mt-2">
-            <h3 class="text-lg font-medium">Timeline</h3>
-            <input type="text" class="text-lg text-right border-b border-black pb-1 w-1/4" v-model="budget.timeline" ref="timelineInput" />
-          </div>
-          <div class="flex items-center justify-between mt-2">
-            <h3 class="text-lg font-medium">Activity</h3>
-            <textarea class="text-lg border border-black rounded-md w-1/2" v-model="budget.note"></textarea>
-          </div>
-          <hr class="my-4">
-         <!-- Confirm Button -->
-        <div class="flex justify-end mt-4">
-          <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" @click="saveBudget">
-            Confirm
-          </button>
+      <div class="border border-black rounded-lg p-5 mt-20 w-4/5">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-bold text-black">Weekly Budget</h3>
+          <input type="number" class="text-lg text-right border-b border-black pb-1" v-on:change="budgetChange"
+            required v-model="weekBudget" />
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <h3 class="text-lg font-medium">Amount Left</h3>
+          <p class="text-lg text-right">{{ weekBudgetLeft }}</p>
+        </div>
+        <div class="flex items-center justify-between mt-4">
+          <h3 class="text-lg font-bold text-black">Monthly Budget</h3>
+          <input type="number" class="text-lg text-right border-b border-black pb-1" v-on:change="budgetChange"
+            required v-model="monthBudget" />
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <h3 class="text-lg font-medium">Amount Left</h3>
+          <p class="text-lg text-right">{{ monthBudgetLeft }}</p>
         </div>
       </div>
+
+      <!-- Save Button -->
+      <button class="bg-black hover:bg-amber-400 text-white font-bold py-2 px-4 rounded shadow-md mt-4 " @click="saveBudget">
+        Save
+      </button>
     </div>
   </div>
-</div>
 </template>
+
 
 <script>
 import UpperNav from '@/components/UpperNav.vue'
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import getBudget from '@/composable/getBudget.js'
+import axios from "axios";
 
 export default {
+  setup() {
+    const { weekBudget, weekBudgetLeft, monthBudget, monthBudgetLeft, thisWeeksExpenses, thisMonthsExpenses, error, loadBudget } =
+      getBudget();
+    loadBudget();
+
+    return {
+      weekBudget,
+      weekBudgetLeft,
+      monthBudget,
+      monthBudgetLeft,
+      thisMonthsExpenses,
+      thisWeeksExpenses,
+      error
+    };
+  },
   components: {
     UpperNav
   },
-  setup() {
-    const budgets = ref([
-      {
-        category: 'Choose',
-        specifyCategory: '',
-        paymentType: 'Choose',
-        currency: 'Php',
-        amount: '0.00',
-        timeline: '',
-        note: ''
-      }
-    ])
-
-    const saveBudget = async () => {
-      const amount = budgets.value[0].amount
-      await axios.put('http://localhost:3000/budget', {
-        budgets: budgets.value
-      })
-      navigateTo('/home', amount)
-    }
-
-    const navigateTo = (route, amount) => {
-      this.$router.push({ path: route, query: { amount: amount } })
-    }
-
-    return {
-      budgets,
-      saveBudget
+  methods: {
+    async budgetChange() {
+      const result = await axios
+        .put("http://localhost:3000/budget", {
+          weeklyBudget: this.weekBudget,
+          monthlyBudget: this.monthBudget
+        })
+        .then(() => {
+          this.weekBudgetLeft = this.weekBudget - this.thisWeeksExpenses;
+          this.monthBudgetLeft = this.monthBudget - this.thisMonthsExpenses;
+        });
     }
   }
 }
@@ -109,13 +87,13 @@ export default {
 
 <style>
 .bg-image {
-  background-image: url('/homebg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-
-.bg-image .grid {
-  flex-grow: 1;
-}
+    background-image: url('/homebg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  .bg-image .grid {
+    flex-grow: 1;
+  }
 </style>
