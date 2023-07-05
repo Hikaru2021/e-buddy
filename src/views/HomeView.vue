@@ -12,14 +12,6 @@
       </div>
     </div>
 
-
-    <!-- Budget & Expenses Container -->
-    <div :class="{ 'container-open': showSideNav }" class="flex flex-col items-center h-screen bg-image mt-10">
-      <!-- Budget -->
-      <div @click="navigateTo('/budget')"
-        class="clickable-card text-center border border-black rounded-2xl py-5 px-5 mb-2 shadow-md hover:shadow-highlight">
-        <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Remaining Balance</h2>
-
      <!-- Budget & Expenses Container -->
      <div class="flex flex-col justify-center items-center h-screen bg-image">
       <!-- Budget -->
@@ -33,9 +25,6 @@
       <div @click="navigateTo('/expenses-view')"
 
         class="clickable-card text-center border border-black rounded-2xl px-20 py-8 hover:shadow-highlight">
-
-        class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl pl-7 pr-7 pt-5 pb-4 shadow-lg">
-
         <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
         <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
@@ -44,12 +33,6 @@
 
         <p class="text-xl">{{ lastMonthsExpenses }}</p>
       </div>
-
-      <!-- Add Expenses Button -->
-      <div class="bg-black flex justify-center mt-2 px-20 py-2 rounded-full">
-        <p class="text-xl p-2">{{ lastMonthsExpenses }}</p>
-      </div>
-    
 
       <!-- Add Expenses Button -->
       <div class="bg-black flex justify-center clickable-card  mt-5 px-20 py-2 rounded-full transform duration-500 hover:scale-110">

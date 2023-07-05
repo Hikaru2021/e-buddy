@@ -1,7 +1,5 @@
 {
   "budget": {
-    "weeklyBudget": 100,
-    "monthlyBudget": 100
     "budgets": [
       {
         "category": "Choose",
@@ -219,6 +217,11 @@
       "date": "2023-07-05T11:29:49.905Z",
       "dateString": "7/5/2023",
       "id": 19
+    },
+    {
+      "date": "2023-07-05T11:48:38.930Z",
+      "dateString": "7/5/2023",
+      "id": 20
     }
   ]
 }
