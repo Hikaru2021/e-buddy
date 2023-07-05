@@ -3,7 +3,7 @@
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "Developers" Text -->
-      <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">DEVELOPERS</h2>
+      <h2 class="text-5xl font-bold mt-4 text-center text-black">DEVELOPERS</h2>
 
       <!-- Developers Container -->
       <div class="flex items-center mt-20 ml-5">
@@ -11,7 +11,7 @@
         <img src="dev-pic.jpg" alt="Developer's Picture" class="w-20 h-20 rounded-full mr-8" />
         <!-- Developer's Name and Description -->
         <div>
-          <h3 class="text-xl font-bold mb-1 text-amber-500">Antonette Gwen Dela Torre</h3>
+          <h3 class="text-xl font-bold mb-1 text-black">Antonette Gwen Dela Torre</h3>
           <p class="text-m">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sem nisl.
           </p>
@@ -20,7 +20,7 @@
       <div class="flex items-center mt-10 ml-5">
         <!-- Developer's Name and Description -->
         <div>
-          <h3 class="text-xl font-bold mb-1 text-amber-500">Jose Mari Hinolan</h3>
+          <h3 class="text-xl font-bold mb-1 text-black">Jose Mari Hinolan</h3>
           <p class="text-m">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sem nisl.
           </p>
@@ -33,7 +33,7 @@
         <img src="dev-pic.jpg" alt="Developer's Picture" class="w-20 h-20 rounded-full mr-8" />
         <!-- Developer's Name and Description -->
         <div>
-          <h3 class="text-xl font-bold mb-1 text-amber-500">Arvin Arar</h3>
+          <h3 class="text-xl font-bold mb-1 text-black">Arvin Arar</h3>
           <p class="text-m">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sem nisl.
           </p>
@@ -42,7 +42,7 @@
       <div class="flex items-center mt-10 mb-10 ml-5">
         <!-- Developer's Name and Description -->
         <div>
-          <h3 class="text-xl font-bold mb-1 text-amber-500">Brian Bulawan</h3>
+          <h3 class="text-xl font-bold mb-1 text-black">Brian Bulawan</h3>
           <p class="text-m">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sem nisl.
           </p>
