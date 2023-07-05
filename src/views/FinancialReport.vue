@@ -5,19 +5,18 @@
   But just so you have an idea the layout of this page, I created those.
   Please feel free to edit it but please do not stray from the layout if possible.
  -->
-<template>
+ <template>
   <upper-nav></upper-nav>
   <div class="flex flex-col items-center h-screen">
     <div class="flex flex-col items-center">
       <!-- Financial Report Text -->
-      <h2 class="text-5xl font-bold mt-4 text-center text-black">FINANCIAL REPORT</h2>
+      <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">FINANCIAL REPORT</h2>
     </div>
 
     <!-- Financial Report Container -->
     <div class="flex justify-center mt-20">
       <!-- Previous Month Button -->
-      <button class="bg-black hover:opacity-60 text-white font-bold py-2 px-4 rounded-l shadow-md"
-        @click="changeMonth(0)">
+      <button class="bg-amber-500 hover:bg-amber-400 text-white font-bold py-2 px-4 rounded-l shadow-md" @click="changeMonth(0)">
         &lt;
       </button>
 
@@ -27,13 +26,13 @@
       </div>
 
       <!-- Next Month Button -->
-      <button class="bg-black hover:opacity-60 text-white font-bold py-2 px-4 rounded-r shadow-md" :disabled="isDisabled"
+      <button class="bg-amber-500 hover:bg-amber-400 text-white font-bold py-2 px-4 rounded-r shadow-md" :disabled="isDisabled"
         id="button" @click="changeMonth(1)">
         &gt;
       </button>
     </div>
 
-    <!-- Monthly Chart Placeholder -->
+   <!-- Monthly Chart Placeholder --> 
     <div class="flex justify-center items-center mt-10 w-1/4">
       <div class="flex justify-center items-center">
         <Pie v-if="render" :data="month" :options="options" />
@@ -42,7 +41,7 @@
 
     <!-- Weekly Charts Container -->
     <div class="flex justify-center m-10" style="width:50%;">
-      <div class="border-2 border-black p-2 rounded" style="width:75%; height: 100%;">
+      <div class="border-2 border-amber-500 p-2 rounded" style="width:75%; height: 100%;" >
         <div class="grid grid-cols-2 gap-1 justify-items-center">
           <!-- Weekly Chart 1 -->
           <div class="w-2/4">
@@ -82,18 +81,18 @@
         <table class="border-collapse mx-auto">
           <thead>
             <tr>
-              <th class="border-2 border-black px-20 py-2">Note</th>
-              <th class="border-2 border-black px-20 py-2">Type</th>
-              <th class="border-2 border-black px-20 py-2">Date</th>
-              <th class="border-2 border-black py-2">Amount</th>
+              <th class="border-2 border-amber-500 px-20 py-2">Note</th>
+              <th class="border-2 border-amber-500 px-20 py-2">Type</th>
+              <th class="border-2 border-amber-500 px-20 py-2">Date</th>
+              <th class="border-2 border-amber-500 px-20 py-2">Amount</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="expense in expenses" :key="expense.id">
-              <td class="border border-black px-4 py-2">{{ expense.name }}</td>
-              <td class="border border-black px-4 py-2">{{ expense.type }}</td>
-              <td class="border border-black px-4 py-2">{{ expense.dateString }}</td>
-              <td class="border border-black px-4 py-2">{{ expense.amount }}</td>
+              <td class="border border-amber-500 px-4 py-2">{{ expense.name }}</td>
+              <td class="border border-amber-500 px-4 py-2">{{ expense.type }}</td>
+              <td class="border border-amber-500 px-4 py-2">{{ expense.dateString }}</td>
+              <td class="border border-amber-500 px-4 py-2">{{ expense.amount }}</td>
             </tr>
           </tbody>
         </table>
@@ -112,7 +111,7 @@ import { ref } from "vue";
 
 ChartJS.register(ArcElement, Tooltip);
 
-const { expenses, month, week1, week2, week3, week4, week5, error, load } =
+const { expenses, month, week1, week3, week4, week5, error, load } =
   getDb();
 
 const monthNames = [
@@ -146,6 +145,16 @@ const options = {
 };
 
 // Define the week2 variable and populate it with data
+const week2 = ref({
+  labels: ["Label 1", "Label 2", "Label 3"],
+  datasets: [
+    {
+      data: [10, 20, 30],
+      backgroundColor: ["#FF0000", "#008000", "#FFA500"],
+      hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+    },
+  ],
+});
 
 function changeMonth(x) {
   if (x == 0) {
