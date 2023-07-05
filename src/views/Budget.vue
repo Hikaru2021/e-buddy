@@ -40,7 +40,7 @@
             <input type="text" class="text-lg text-right border-b border-black pb-1 w-1/4" v-model="budget.timeline" ref="timelineInput" />
           </div>
           <div class="flex items-center justify-between mt-2">
-            <h3 class="text-lg font-medium">Note</h3>
+            <h3 class="text-lg font-medium">Activity</h3>
             <textarea class="text-lg border border-black rounded-md w-1/2" v-model="budget.note"></textarea>
           </div>
           <hr class="my-4">

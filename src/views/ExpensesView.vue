@@ -13,7 +13,7 @@
           <tr>
             <th class="border border-black px-4 py-2">Date</th>
             <th class="border border-black px-4 py-2">Type</th>
-            <th class="border border-black px-4 py-2">Note</th>
+            <th class="border border-black px-4 py-2">Activity</th>
             <th class="border border-black px-4 py-2">Amount</th>
           </tr>
         </thead>

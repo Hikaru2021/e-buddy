@@ -25,7 +25,7 @@
           <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="otherCategory" />
         </div>
         <div class="w-2/3 flex flex-col mb-4">
-          <h3 class="text-lg font-bold mb-2">Note</h3>
+          <h3 class="text-lg font-bold mb-2">Activity</h3>
           <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="note" />
         </div>
         <div class="w-2/3 flex flex-col mb-4">
