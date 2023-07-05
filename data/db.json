@@ -1,5 +1,7 @@
 {
   "budget": {
+    "weeklyBudget": 100,
+    "monthlyBudget": 100
     "budgets": [
       {
         "category": "Choose",
