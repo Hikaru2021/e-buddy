@@ -73,13 +73,13 @@ export default {
     <div class="flex flex-col justify-center items-center h-screen bg-image">
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
-        class="clickable-card text-center border border-black rounded-2xl p-3 pl-9 pr-9 mb-2 shadow-lg">
+        class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl p-3 pl-9 pr-9 mb-6 shadow-lg">
         <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Budget</h2>
         <p class="text-xl">{{ monthBudgetLeft }}</p>
       </div>
       <!-- Expenses -->
       <div @click="navigateTo('/expenses-view')"
-        class="clickable-card text-center border border-black rounded-2xl pl-7 pr-7 shadow-lg">
+        class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl pl-7 pr-7 pt-5 pb-4 shadow-lg">
         <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
         <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
