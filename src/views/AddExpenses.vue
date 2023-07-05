@@ -8,10 +8,14 @@
       <!-- Add Expenses Container -->
       <div class="border border-black rounded-lg p-12 mt-20 w-2/5 bg-slate-100">
         <div class="w-2/3 flex flex-col mb-4">
+          <h3 class="text-lg font-bold mb-2">Amount</h3>
+          <input type="number" class="w-full h-7 border-2 border-black rounded" required v-model="amount" />
+        </div>
+        <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Category</h3>
           <select class="w-full h-7 border-2 border-black rounded" required v-model="type">
             <option value="Food">Food</option>
-            <option value="Transport">Transport</option>
+            <option value="Transportation">Transportation</option>
             <option value="Housing">Housing</option>
             <option value="Others">Others</option>
           </select>
@@ -20,10 +24,16 @@
           <h3 class="text-lg font-bold mb-2">Note</h3>
           <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="note" />
         </div>
-        
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Amount</h3>
           <input type="number" class="w-full h-7 border-2 border-black rounded" required v-model="amount" />
+        <div class="w-2/3 flex flex-col mb-4">
+          <h3 class="text-lg font-bold mb-2">Payment Type</h3>
+          <select class="w-full h-7 border-2 border-black rounded" required v-model="paymentType">
+            <option value="Cash">Cash</option>
+            <option value="Card">Card</option>
+            <option value="Savings">Savings</option>
+          </select>
         </div>
       </div>
 
@@ -47,7 +57,8 @@ export default {
     const type = ref();
     const amount = ref();
     const date = ref(new Date());
-    return { note, type, amount, date };
+    const paymentType = ref();
+    return { note, type, amount, date, paymentType };
   },
   components: {
     UpperNav
@@ -63,6 +74,7 @@ export default {
         date: this.date,
         dateString: this.date.toLocaleDateString(),
         amount: this.amount,
+        paymentType: this.paymentType,
       });
       this.$router.push('/expenses-view')
     }
@@ -72,14 +84,14 @@ export default {
 
 <style>
 .bg-image {
-    background-image: url('/homebg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-  }
-  
-  .bg-image .grid {
-    flex-grow: 1;
-  }
-  
+  background-image: url('/homebg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.bg-image .grid {
+  flex-grow: 1;
+}
+
 </style>
