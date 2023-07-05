@@ -5,7 +5,7 @@
  -->
 
 <template>
-  <div>
+  <div class="bg-image">
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- Set Reminders Text -->

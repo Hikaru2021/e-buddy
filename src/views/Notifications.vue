@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black h-12 flex justify-center">
+  <div class="bg-image bg-black h-12 flex justify-center">
     <!-- Upper Buttons -->
     <div class="flex justify-between w-full">
       <!-- Back Button -->

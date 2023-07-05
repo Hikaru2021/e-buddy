@@ -69,7 +69,6 @@
   </div>
 </template>
 
-
 <script>
 import UpperNav from '@/components/UpperNav.vue'
 import { ref, onMounted } from 'vue'

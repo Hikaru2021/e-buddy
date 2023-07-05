@@ -27,7 +27,7 @@
       <button
         @click="navigateTo('/home')"
         :class="{ 'active': isActive('/home') }"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700  hover:scale-90"
       >
         <i class="fas fa-box text-black" style="font-size: 25px;"></i>
         <span class="ml-2">Dashboard</span>
@@ -36,7 +36,7 @@
       <button
         @click="navigateTo('/budget')"
         :class="{ 'active': isActive('/budget') }"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700  hover:scale-90"
       >
         <i class="fas fa-money-bill text-black" style="font-size: 25px;"></i>
         <span class="ml-2">Budget</span>
@@ -45,7 +45,7 @@
       <button
         @click="navigateTo('/bill-reminders')"
         :class="{ 'active': isActive('/bill-reminders') }"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700  hover:scale-90"
       >
         <i class="fas fa-bell text-black" style="font-size: 25px;"></i>
         <span class="ml-2 pl-2">Bills Reminder</span>
@@ -54,7 +54,7 @@
       <button
         @click="navigateTo('/view-financial-report')"
         :class="{ 'active': isActive('/view-financial-report') }"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700  hover:scale-90"
       >
         <i class="fas fa-chart-pie text-black" style="font-size: 25px;"></i>
         <span class="ml-2 pl-2">View Financial Report</span>
@@ -63,7 +63,7 @@
       <button
         @click="navigateTo('/about')"
         :class="{ 'active': isActive('/about') }"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700  hover:scale-90"
       >
         <i class="fas fa-question text-black" style="font-size: 25px;"></i>
         <span class="ml-2 pl-4">About</span>
@@ -72,7 +72,7 @@
       <button
         @click="navigateTo('/')"
         :class="{ 'active': isActive('/') }"
-        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
+        class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700  hover:scale-90"
       >
         <i class="fas fa-sign-out-alt text-black" style="font-size: 25px;"></i>
         <span class="ml-2 pl-3">Log out</span>

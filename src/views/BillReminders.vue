@@ -1,5 +1,5 @@
 <template>
-  <div class="ml-24">
+  <div class="bg-image ml-24">
     <!-- <upper-nav></upper-nav> -->
     <div class="flex flex-col items-center">
       <!-- Reminders Text -->

@@ -10,12 +10,12 @@
     <div :class="{ 'container-open': showSideNav }" class="flex flex-col items-center h-screen bg-image mt-10">
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
-        class="clickable-card text-center border border-black rounded-2xl py-5 px-5 mb-2 shadow-md hover:shadow-highlight">
+        class="clickable-card text-center border border-black rounded-2xl py-5 px-5 mb-2 shadow-md  hover:scale-90">
         <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Remaining Balance</h2>
         <p class="text-xl">{{ monthBudgetLeft }}</p>
       </div>
       <!-- Expenses -->
-      <div @click="navigateTo('/expenses-view')" class="clickable-card text-center border border-black rounded-2xl px-20 py-8 hover:shadow-highlight">
+      <div @click="navigateTo('/expenses-view')" class="clickable-card text-center border border-black rounded-2xl px-20 py-8 hover:scale-90">
 
         <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
         <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
@@ -27,7 +27,7 @@
       </div>
 
       <!-- Add Expenses Button -->
-      <div class="bg-black flex justify-center clickable-card  mt-5 px-20 py-2 rounded-full transform duration-500 hover:scale-110">
+      <div class="bg-black flex justify-center clickable-card  mt-5 px-20 py-2 rounded-full transform duration-500  hover:scale-90">
         <router-link to="/add-expenses" class="image-button">
           <i class="fas fa-plus text-white text-3xl"></i>
         </router-link>
