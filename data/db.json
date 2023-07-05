@@ -37,6 +37,14 @@
       "id": 4
     },
     {
+      "name": "fish",
+      "type": "Housing",
+      "date": "2023-05-24T16:00:00.000Z",
+      "dateString": "2/25/2023",
+      "amount": 50,
+      "id": 4
+    },
+    {
       "name": "Caldereta",
       "type": "Food",
       "date": "2023-05-02T04:01:17.169Z",
