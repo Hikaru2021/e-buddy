@@ -2,6 +2,7 @@
   <div class="bg-image">
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
+
       <!-- "Add Expenses" Text -->
       <h2 class="text-5xl font-bold mt-4 text-center text-black">ADD EXPENSES</h2>
 

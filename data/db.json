@@ -1,18 +1,32 @@
 {
   "budget": {
-    "budgets": [
-      {
-        "category": "Choose",
-        "specifyCategory": "",
-        "paymentType": "Choose",
-        "amount": "",
-        "timeline": "",
-        "note": ""
-      }
-    ]
+    "weeklyBudget": 1000,
+    "monthlyBudget": 4000
   },
   "expenses": [
     {
+      "note": "Bopis",
+      "type": "Food",
+      "date": "2023-06-26T06:47:50.968Z",
+      "dateString": "6/26/2023",
+      "amount": 50,
+      "id": 1
+    },
+    {
+      "note": "Rent",
+      "type": "Housing",
+      "date": "2023-06-26T06:49:18.876Z",
+      "dateString": "6/26/2023",
+      "amount": 600,
+      "id": 2
+    },
+    {
+      "note": "mcdo",
+      "type": "Food",
+      "date": "2023-07-05T04:59:44.445Z",
+      "dateString": "05/07/2023",
+      "amount": 200,
+      "id": 3
       "date": "2023-07-05T03:59:58.099Z",
       "dateString": "7/5/2023",
       "id": 1
