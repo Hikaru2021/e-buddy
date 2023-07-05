@@ -46,7 +46,7 @@
           <hr class="my-4">
          <!-- Confirm Button -->
         <div class="flex justify-end mt-4">
-          <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+          <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" @click="saveBudget">
             Confirm
           </button>
         </div>
@@ -55,12 +55,11 @@
   </div>
   </div>
 </template>
+
 <script>
 import UpperNav from '@/components/UpperNav.vue'
 import { ref, onMounted } from 'vue'
-import flatpickr from 'flatpickr'
-import 'flatpickr/dist/flatpickr.min.css'
-import axios from "axios";
+import axios from 'axios'
 
 export default {
   components: {
@@ -72,49 +71,28 @@ export default {
         category: 'Choose',
         specifyCategory: '',
         paymentType: 'Choose',
-        amount: 0.0,
+        amount: '',
         timeline: '',
         note: ''
       }
-    ]);
+    ])
 
-    onMounted(() => {
-      flatpickr("#timelineInput", {
-        mode: 'range',
-        dateFormat: 'Y-m-d',
-        onChange: (selectedDates) => {
-          budgets.value[0].timeline = selectedDates.map(date => date.toLocaleDateString()).join(' to ');
-        }
-      });
-    });
+    const saveBudget = async () => {
+      const amount = budgets.value[0].amount
+      await axios.put('http://localhost:3000/budget', {
+        budgets: budgets.value
+      })
+      navigateTo('/home', amount)
+    }
+
+    const navigateTo = (route, amount) => {
+      this.$router.push({ path: route, query: { amount: amount } })
+    }
 
     return {
-      budgets
-    };
-  },
-  methods: {
-    async saveBudget() {
-      const result = await axios
-        .put("http://localhost:3000/budget", {
-          budgets: this.budgets
-        })
-        .then(() => {
-          // Update the budget calculations here
-        });
+      budgets,
+      saveBudget
     }
   }
 }
 </script>
-
-<style>
-.bg-image {
-  background-image: url('/homebg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-
-.bg-image .grid {
-  flex-grow: 1;
-}
-</style>
