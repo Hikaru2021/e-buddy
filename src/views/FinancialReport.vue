@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <div class="ml-24">
     <!-- <upper-nav></upper-nav> -->
@@ -5,6 +6,34 @@
       <div class="flex flex-col items-center">
         <!-- Financial Report Text -->
         <h2 class="text-5xl font-bold mt-4 text-center text-black">FINANCIAL REPORT</h2>
+=======
+<!-- 
+  NOTE:
+
+  The charts and tables are just dummy. 
+  But just so you have an idea the layout of this page, I created those.
+  Please feel free to edit it but please do not stray from the layout if possible.
+ -->
+ <template>
+  <upper-nav></upper-nav>
+  <div class="flex flex-col items-center h-screen">
+    <div class="flex flex-col items-center">
+      <!-- Financial Report Text -->
+      <h2 class="text-5xl font-bold mt-4 text-center text-amber-400">FINANCIAL REPORT</h2>
+    </div>
+
+    <!-- Financial Report Container -->
+    <div class="flex justify-center mt-20">
+      <!-- Previous Month Button -->
+      <button class="bg-black hover:opacity-60 text-white font-bold py-2 px-4 rounded-l shadow-md"
+        @click="changeMonth(0)">
+        &lt;
+      </button>
+
+      <!-- Month Display -->
+      <div class="bg-white text-2xl font-bold py-2 px-4 rounded flex justify-center items-center ml-20 mr-20">
+        {{ monthNames[currentMonth] }}
+>>>>>>> e7825f5cb7605aa04ee8a6c37397dbbb1de3f226
       </div>
 
       <!-- Financial Report Container -->
@@ -15,6 +44,7 @@
           <i class="fas fa-chevron-left text-white"></i>
         </button>
 
+<<<<<<< HEAD
         <!-- Month Display -->
         <div class="bg-white text-2xl font-bold py-2 px-4 rounded flex justify-center items-center ml-20 mr-20">
           {{ monthNames[currentMonth] }}
@@ -25,6 +55,12 @@
           id="button" @click="changeMonth(1)">
           <i class="fas fa-chevron-right text-white"></i>
         </button>
+=======
+
+    <div class="flex justify-center items-center mt-10 w-1/4">
+      <div class="flex justify-center items-center">
+        <Pie v-if="render" :data="month" :options="options" />
+>>>>>>> e7825f5cb7605aa04ee8a6c37397dbbb1de3f226
       </div>
 
       <!-- Monthly Chart Placeholder -->
