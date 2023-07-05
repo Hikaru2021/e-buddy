@@ -9,7 +9,16 @@
       <div class="border border-black rounded-lg p-12 mt-20 w-2/5 bg-slate-100">
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Amount</h3>
-          <input type="number" class="w-full h-7 border-2 border-black rounded" required v-model="amount" />
+          <div class="flex items-center">
+            <select class="h-7 border-2 border-black rounded-l pl-2" required v-model="currency">
+              <option value="Php">Php</option>
+              <option value="$">$</option>
+              <option value="€">€</option>
+              <option value="¥">¥</option>
+              <!-- Add more currency options as needed -->
+            </select>
+            <input type="number" class="w-full h-7 border-2 border-black rounded-r" required v-model="amount" step="0.01" />
+          </div>
         </div>
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Category</h3>
@@ -60,14 +69,15 @@ export default {
     const date = ref(new Date());
     const paymentType = ref();
     const otherCategory = ref();
-    return { note, type, amount, date, paymentType, otherCategory };
+    const currency = ref('Php'); // Set the default currency here
+    return { note, type, amount, date, paymentType, otherCategory, currency };
   },
   components: {
     UpperNav
   },
   methods: {
     restrictToNumbers(event) {
-      event.target.value = event.target.value.replace(/[^0-9]/g, '')
+      event.target.value = event.target.value.replace(/[^0-9.]/g, ''); // Allow only numbers and decimal point
     },
     async navigateToExpensesView() {
       let result = await axios.post("http://localhost:3000/expenses", {
