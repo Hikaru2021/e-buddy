@@ -19,6 +19,14 @@
       "dateString": "6/26/2023",
       "amount": 600,
       "id": 2
+    },
+    {
+      "note": "mcdo",
+      "type": "Food",
+      "date": "2023-07-05T04:59:44.445Z",
+      "dateString": "05/07/2023",
+      "amount": 200,
+      "id": 3
     }
   ]
 }
