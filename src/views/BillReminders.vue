@@ -1,14 +1,3 @@
-<!-- 
-    NOTE:
-
-    I created a component for each reminders -- "Reminder Box".
-    Where if there is new reminder, i-call ra to syang component 
-        then supply the details nalang.
-
-    Please also make sure that if they click one of the Reminder Box,
-        they should be able to edit the details of it.
- -->
-
 <template>
   <div>
     <upper-nav></upper-nav>
@@ -23,9 +12,11 @@
     </div>
 
     <!-- Add Expenses Button -->
-    <div class="sticky-container bg-black">
+    <div class="flex justify-center mt-2">
       <router-link to="/set-reminders" class="image-button">
-        <img src="add-expenses.svg" alt="Image Button" class="h-10 w-10" />
+        <div class="bg-black flex justify-center items-center px-20 py-2 w-8 rounded-full hover:scale-110">
+          <i class="fas fa-plus text-white text-3xl"></i>
+        </div>
       </router-link>
     </div>
   </div>

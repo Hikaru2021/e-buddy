@@ -2,6 +2,17 @@
   "budget": {
     "weeklyBudget": 100,
     "monthlyBudget": 100
+    "budgets": [
+      {
+        "category": "Choose",
+        "specifyCategory": "",
+        "paymentType": "Choose",
+        "currency": "$",
+        "amount": "",
+        "timeline": "",
+        "note": ""
+      }
+    ]
   },
   "expenses": [
     {
@@ -173,6 +184,36 @@
       "date": "2023-06-25T08:01:42.355Z",
       "dateString": "6/25/2023",
       "id": 12
+    },
+    {
+      "date": "2023-07-05T07:02:16.226Z",
+      "dateString": "7/5/2023",
+      "id": 13
+    },
+    {
+      "date": "2023-07-05T08:11:10.547Z",
+      "dateString": "7/5/2023",
+      "id": 14
+    },
+    {
+      "date": "2023-07-05T09:22:22.848Z",
+      "dateString": "7/5/2023",
+      "id": 15
+    },
+    {
+      "date": "2023-07-05T09:34:32.056Z",
+      "dateString": "7/5/2023",
+      "id": 16
+    },
+    {
+      "date": "2023-07-05T09:37:21.199Z",
+      "dateString": "7/5/2023",
+      "id": 17
+    },
+    {
+      "date": "2023-07-05T09:37:23.758Z",
+      "dateString": "7/5/2023",
+      "id": 18
     }
   ]
 }

@@ -7,43 +7,46 @@
     </div>
 
     <!-- Expenses Table -->
-<div class="w-full max-w-4xl mx-auto">
-  <table class="border-collapse border-2 border-black mt-8 w-full">
-    <thead>
-      <tr>
-        <th class="border border-gray-200 px-4 py-2">Date</th>
-        <th class="border border-gray-200 px-4 py-2">Category</th>
-        <th class="border border-gray-200 px-4 py-2">Amount</th>
-        <th class="border border-gray-200 px-4 py-2">Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="border border-gray-200 px-4 py-2">2023-06-01</td>
-        <td class="border border-gray-200 px-4 py-2">Office supplies</td>
-        <td class="border border-gray-200 px-4 py-2">$50.00</td>
-        <td class="border border-gray-200 px-4 py-2">Ballpen for signature</td>
-      </tr>
-      <tr>
-        <td class="border border-gray-200 px-4 py-2">2023-06-05</td>
-        <td class="border border-gray-200 px-4 py-2">Internet bill</td>
-        <td class="border border-gray-200 px-4 py-2">$80.00</td>
-        <td class="border border-gray-200 px-4 py-2">My Wifi</td>
-      </tr>
-      <!-- Add more rows for each expense -->
-    </tbody>
-  </table>
-</div>
-
+    <div class="w-full max-w-4xl mx-auto">
+      <table class="border-collapse border-2 border-black mt-8 w-full">
+         <thead>
+          <tr>
+            <th class="border border-gray-200 px-4 py-2">Date</th>
+            <th class="border border-gray-200 px-4 py-2">Category</th>
+            <th class="border border-gray-200 px-4 py-2">Amount</th>
+            <th class="border border-gray-200 px-4 py-2">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-200 px-4 py-2">2023-06-01</td>
+            <td class="border border-gray-200 px-4 py-2">Office supplies</td>
+            <td class="border border-gray-200 px-4 py-2">$50.00</td>
+            <td class="border border-gray-200 px-4 py-2">Ballpen for signature</td>
+          </tr>
+          <tr>
+            <td class="border border-gray-200 px-4 py-2">2023-06-05</td>
+            <td class="border border-gray-200 px-4 py-2">Internet bill</td>
+            <td class="border border-gray-200 px-4 py-2">$80.00</td>
+            <td class="border border-gray-200 px-4 py-2">My Wifi</td>
+          </tr>
+          <!-- Add more rows for each expense -->
+        </tbody>
+    
+      </table>
+    </div>
 
     <!-- Add Expenses Button -->
-    <div class="sticky-container bg-black">
+    <div class="flex justify-center mt-2">
       <router-link to="/add-expenses" class="image-button">
-        <img src="add-expenses.svg" alt="Image Button" class="h-10 w-10" />
+        <div class="bg-black flex justify-center items-center px-20 py-2 rounded-full w-12 hover:scale-110">
+          <i class="fas fa-plus text-white text-3xl"></i>
+        </div>
       </router-link>
     </div>
   </div>
 </template>
+
 
 <script>
 import UpperNav from '@/components/UpperNav.vue';
