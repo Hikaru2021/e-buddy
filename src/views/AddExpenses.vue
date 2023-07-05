@@ -6,7 +6,7 @@
       <h2 class="text-5xl font-bold mt-4 text-center text-black">ADD EXPENSES</h2>
 
       <!-- Add Expenses Container -->
-      <div class="w-3/4 h-1/2 flex flex-col items-center bg-gray-200 p-10 rounded mt-10">
+      <div class="border border-black rounded-lg p-12 mt-20 w-2/5 bg-slate-100">
         <div class="w-2/3 flex flex-col mb-4">
           <h3 class="text-lg font-bold mb-2">Note</h3>
           <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="note" />
