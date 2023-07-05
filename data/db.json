@@ -1,5 +1,8 @@
 {
   "budget": {
+    "weeklyBudget": 100,
+    "monthlyBudget": 100
+  },
   "expenses": [
     {
       "name": "asdasd",
@@ -72,6 +75,104 @@
       "dateString": "6/25/2023",
       "amount": 1200,
       "id": 9
-    }  
+    },
+    {
+      "note": "tEST",
+      "type": "Others",
+      "date": "2023-06-25T06:09:53.018Z",
+      "dateString": "6/25/2023",
+      "amount": 145,
+      "id": 10
+    },
+    {
+      "name": "asdasd",
+      "type": "Housing",
+      "date": "2023-06-02T03:47:21.255Z",
+      "dateString": "2/2/2023",
+      "amount": 2000,
+      "id": 1
+    },
+    {
+      "name": "Tomahwak",
+      "type": "Others",
+      "date": "2023-06-19T16:00:00.000Z",
+      "dateString": "2/20/2023",
+      "amount": 120,
+      "id": 2
+    },
+    {
+      "name": "isda",
+      "type": "Housing",
+      "date": "2023-06-25T16:00:00.000Z",
+      "dateString": "2/26/2023",
+      "amount": 20,
+      "id": 3
+    },
+    {
+      "name": "fish",
+      "type": "Housing",
+      "date": "2023-05-24T16:00:00.000Z",
+      "dateString": "2/25/2023",
+      "amount": 50,
+      "id": 4
+    },
+    {
+      "name": "Caldereta",
+      "type": "Food",
+      "date": "2023-05-02T04:01:17.169Z",
+      "dateString": "2/2/2023",
+      "amount": 250,
+      "id": 5
+    },
+    {
+      "name": "REnt",
+      "type": "Housing",
+      "date": "2023-06-30T16:00:00.000Z",
+      "dateString": "1/31/2023",
+      "amount": 1100,
+      "id": 6
+    },
+    {
+      "note": "asd",
+      "type": "Food",
+      "date": "2023-06-12T05:25:33.982Z",
+      "dateString": "6/12/2023",
+      "amount": 500,
+      "id": 7
+    },
+    {
+      "note": "Creamy White",
+      "type": "Food",
+      "date": "2023-06-24T02:34:41.557Z",
+      "dateString": "6/24/2023",
+      "amount": 30,
+      "id": 8
+    },
+    {
+      "note": "Test",
+      "type": "Housing",
+      "date": "2023-06-24T17:35:21.062Z",
+      "dateString": "6/25/2023",
+      "amount": 1200,
+      "id": 9
+    },
+    {
+      "note": "tEST",
+      "type": "Others",
+      "date": "2023-06-25T06:09:53.018Z",
+      "dateString": "6/25/2023",
+      "amount": 145,
+      "id": 10
+    },
+    {
+      "date": "2023-06-25T08:01:30.048Z",
+      "dateString": "6/25/2023",
+      "id": 11
+    },
+    {
+      "date": "2023-06-25T08:01:42.355Z",
+      "dateString": "6/25/2023",
+      "id": 12
+    }
   ]
 }
