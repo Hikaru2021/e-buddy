@@ -4,7 +4,8 @@
     <div class="flex justify-between w-full">
       <!-- Back Button -->
       <button @click="goBack" class="text-blue-500 hover:text-blue-700 flex items-center">
-        <img src="back.svg" alt="Back" class="w-8 h-8 m-5" />
+        <!-- <img src="back.svg" alt="Back" class="w-8 h-8 m-5" /> -->
+        <i class="fas fa-chevron-left text-white text-2xl pl-10"></i>
       </button>
 
       <!-- Empty Space (to push the buttons apart) -->
@@ -12,7 +13,8 @@
 
       <!-- Read All Button -->
       <button @click="markAllAsRead" class="text-green-500 hover:text-amber-400 flex items-center">
-        <img src="read-all.svg" alt="Read All" class="w-10 h-10 m-5" />
+        <!-- <img src="read-all.svg" alt="Read All" class="w-10 h-10 m-5" /> -->
+        <i class="fas fa-check-double text-white text-2xl pr-10"></i>
       </button>
     </div>
   </div>

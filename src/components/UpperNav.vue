@@ -1,13 +1,13 @@
 <template>
-  <div class="sticky top-0 bg-black flex justify-between items-start px-3 py-1">
-    <div>
-      <button class="bg-transparent border-none py-2" @click="home">
-        <img src="back.svg" alt="Back Button" class="h-6 w-10" />
+  <div class="sticky top-0 bg-black flex justify-between items-center px-3 py-1">
+    <div class="mr-2">
+      <button class="bg-transparent border-none py-2" @click="goBack">
+        <i class="fas fa-chevron-left text-white text-3xl pl-10"></i>
       </button>
     </div>
     <div>
       <button class="bg-transparent border-none" @click="showDiscardPopup">
-        <img src="notification.svg" alt="Notification Button" class="h-10 w-10" />
+        <i class="fas fa-bell text-white text-3xl pr-10"></i>
       </button>
     </div>
     <!-- Show the discard popup component -->
@@ -25,8 +25,8 @@ export default {
     }
   },
   methods: {
-    home() {
-      this.$router.push({ name: 'home' });
+    goBack() {
+      this.$router.back()
     },
     showDiscardPopup() {
       this.showPopup = true // Set the flag to true to show the discard popup
@@ -46,4 +46,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.fas:hover{
+  color:#FFD700;
+}
+</style>

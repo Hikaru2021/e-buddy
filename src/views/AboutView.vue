@@ -13,7 +13,7 @@
         <div>
           <h3 class="text-xl font-bold mb-1 text-amber-500">Antonette Gwen Dela Torre</h3>
           <p class="text-m">
-            VSU Student, BSCS-3
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sem nisl.
           </p>
         </div>
       </div>
@@ -22,7 +22,7 @@
         <div>
           <h3 class="text-xl font-bold mb-1 text-amber-500">Jose Mari Hinolan</h3>
           <p class="text-m">
-            VSU Student, BSCS-3
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sem nisl.
           </p>
         </div>
         <!-- Developer's Image -->
@@ -35,7 +35,7 @@
         <div>
           <h3 class="text-xl font-bold mb-1 text-amber-500">Arvin Arar</h3>
           <p class="text-m">
-            VSU Student, BSCS-3
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sem nisl.
           </p>
         </div>
       </div>
@@ -44,7 +44,7 @@
         <div>
           <h3 class="text-xl font-bold mb-1 text-amber-500">Brian Bulawan</h3>
           <p class="text-m">
-            VSU Student, BSCS-4
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis sem nisl.
           </p>
         </div>
         <!-- Developer's Image -->
@@ -52,7 +52,6 @@
       </div>
     </div>
     <p class="text-m mr-10 ml-10 mb-10 text-center">© J&F 2023 - CSci 145 Final Project</p>
-    <p class="text-m mr-10 ml-10 mb-10 text-center">For Inquiries and Bug Report, contact us at support@JandF.com</p>
   </div>
 </template>
 
