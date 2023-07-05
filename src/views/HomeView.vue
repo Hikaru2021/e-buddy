@@ -74,7 +74,7 @@ export default {
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
         class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl p-3 pl-9 pr-9 mb-6 shadow-lg">
-        <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Budget</h2>
+        <h2 class="text-2xl font-bold mb-1 pl-8">Remaining Balance</h2>
         <p class="text-xl">{{ monthBudgetLeft }}</p>
       </div>
       <!-- Expenses -->

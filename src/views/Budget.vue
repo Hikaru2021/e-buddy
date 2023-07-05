@@ -33,14 +33,23 @@
           </div>
           <div class="flex items-center justify-between mt-2">
             <h3 class="text-lg font-medium">Amount</h3>
-            <input type="number" class="text-lg text-right border-b border-black pb-1 w-1/4" v-model="budget.amount" />
+            <div class="flex items-center">
+              <select class="h-7 border-2 border-black rounded-l pl-2" required v-model="budget.currency">
+                <option value="$">Php</option>
+                <option value="$">$</option>
+                <option value="€">€</option>
+                <option value="¥">¥</option>
+                <!-- Add more currency options as needed -->
+              </select>
+              <input type="number" class="w-full h-7 border-2 border-black rounded-r" required v-model="budget.amount" step="0.01" />
+            </div>
           </div>
           <div class="flex items-center justify-between mt-2">
             <h3 class="text-lg font-medium">Timeline</h3>
             <input type="text" class="text-lg text-right border-b border-black pb-1 w-1/4" v-model="budget.timeline" ref="timelineInput" />
           </div>
           <div class="flex items-center justify-between mt-2">
-            <h3 class="text-lg font-medium">Note</h3>
+            <h3 class="text-lg font-medium">Activity</h3>
             <textarea class="text-lg border border-black rounded-md w-1/2" v-model="budget.note"></textarea>
           </div>
           <hr class="my-4">
@@ -53,7 +62,7 @@
       </div>
     </div>
   </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -71,6 +80,7 @@ export default {
         category: 'Choose',
         specifyCategory: '',
         paymentType: 'Choose',
+        currency: '$', // Add currency field
         amount: '',
         timeline: '',
         note: ''
@@ -96,3 +106,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.bg-image {
+  background-image: url('/homebg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.bg-image .grid {
+  flex-grow: 1;
+}
+</style>

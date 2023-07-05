@@ -2,46 +2,57 @@
   <div class="bg-image">
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
-        <!-- "Add Expenses" Text -->
-        <h2 class="text-5xl font-bold p-12 text-center text-black">Add Expenses</h2>
 
-        <!-- Add Expenses Container -->
-        <div class="border border-black rounded-lg p-12 mt-20 w-2/5 bg-slate-100">
-          <div class="w-2/3 flex flex-col mb-4">
-            <h3 class="text-lg font-bold mb-2">Amount</h3>
-            <input type="number" class="w-full h-7 border-2 border-black rounded" required v-model="amount" />
-          </div>
-          <div class="w-2/3 flex flex-col mb-4">
-            <h3 class="text-lg font-bold mb-2">Category</h3>
-            <select class="w-full h-7 border-2 border-black rounded" required v-model="type">
-              <option value="Food">Food</option>
-              <option value="Transportation">Transportation</option>
-              <option value="Housing">Housing</option>
-              <option value="Others">Others</option>
+      <!-- "Add Expenses" Text -->
+      <h2 class="text-5xl font-bold mt-4 text-center text-black">ADD EXPENSES</h2>
+
+      <!-- Add Expenses Container -->
+      <div class="border border-black rounded-lg p-12 mt-20 w-2/5 bg-slate-100">
+        <div class="w-2/3 flex flex-col mb-4">
+          <h3 class="text-lg font-bold mb-2">Amount</h3>
+          <div class="flex items-center">
+            <select class="h-7 border-2 border-black rounded-l pl-2" required v-model="currency">
+              <option value="Php">Php</option>
+              <option value="$">$</option>
+              <option value="€">€</option>
+              <option value="¥">¥</option>
+              <!-- Add more currency options as needed -->
             </select>
+            <input type="number" class="w-full h-7 border-2 border-black rounded-r" required v-model="amount" step="0.01" />
           </div>
-          <div class="w-2/3 flex flex-col mb-4">
-            <h3 class="text-lg font-bold mb-2">Note</h3>
-            <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="note" />
-          </div>
-          <div class="w-2/3 flex flex-col mb-4">
-            <h3 class="text-lg font-bold mb-2">Amount</h3>
-            <input type="number" class="w-full h-7 border-2 border-black rounded" required v-model="amount" />
-            <div class="w-2/3 flex flex-col mb-4">
-              <h3 class="text-lg font-bold mb-2">Payment Type</h3>
-              <select class="w-full h-7 border-2 border-black rounded" required v-model="paymentType">
-                <option value="Cash">Cash</option>
-                <option value="Card">Card</option>
-                <option value="Savings">Savings</option>
-              </select>
-            </div>
-          </div>
-          <!-- Add Button -->
-          <button @click="navigateToExpensesView"
-            class="bg-black hover:opacity-60 text-white font-bold py-2 px-9 rounded mt-4">
-            Add
-          </button>
         </div>
+        <div class="w-2/3 flex flex-col mb-4">
+          <h3 class="text-lg font-bold mb-2">Category</h3>
+          <select class="w-full h-7 border-2 border-black rounded" required v-model="type">
+            <option value="Food">Food</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Housing">Housing</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        <div v-if="type === 'Others'" class="w-2/3 flex flex-col mb-4">
+          <h3 class="text-lg font-bold mb-2">Category (Specify)</h3>
+          <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="otherCategory" />
+        </div>
+        <div class="w-2/3 flex flex-col mb-4">
+          <h3 class="text-lg font-bold mb-2">Activity</h3>
+          <input class="w-full h-7 border-2 border-black rounded" type="text" required v-model="note" />
+        </div>
+        <div class="w-2/3 flex flex-col mb-4">
+          <h3 class="text-lg font-bold mb-2">Payment Type</h3>
+          <select class="w-full h-7 border-2 border-black rounded" required v-model="paymentType">
+            <option value="Cash">Cash</option>
+            <option value="Card">Card</option>
+            <option value="Savings">Savings</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Add Button -->
+      <button @click="navigateToExpensesView"
+        class="bg-black hover:opacity-60 text-white font-bold py-2 px-9 rounded mt-4">
+        Add
+      </button>
     </div>
   </div>
 </template>
@@ -58,19 +69,21 @@ export default {
     const amount = ref();
     const date = ref(new Date());
     const paymentType = ref();
-    return { note, type, amount, date, paymentType };
+    const otherCategory = ref();
+    const currency = ref('Php'); // Set the default currency here
+    return { note, type, amount, date, paymentType, otherCategory, currency };
   },
   components: {
     UpperNav
   },
   methods: {
     restrictToNumbers(event) {
-      event.target.value = event.target.value.replace(/[^0-9]/g, '')
+      event.target.value = event.target.value.replace(/[^0-9.]/g, ''); // Allow only numbers and decimal point
     },
     async navigateToExpensesView() {
       let result = await axios.post("http://localhost:3000/expenses", {
         note: this.note,
-        type: this.type,
+        type: this.type === 'Others' ? this.otherCategory : this.type,
         date: this.date,
         dateString: this.date.toLocaleDateString(),
         amount: this.amount,
