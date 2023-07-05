@@ -1,4 +1,5 @@
- <div class="bg-image">
+<template>
+  <div class="bg-image">
     <upper-nav></upper-nav>
     <div class="flex flex-col items-center">
       <!-- "BUDGET" Text -->
@@ -59,16 +60,10 @@
           </button>
         </div>
       </div>
-
-      <!-- Save Button -->
-      <button class="bg-black hover:bg-amber-400 text-white font-bold py-2 px-4 rounded shadow-md mt-4 " @click="saveBudget">
-        Save
-      </button>
     </div>
   </div>
 </div>
 </template>
-
 
 <script>
 import UpperNav from '@/components/UpperNav.vue'
