@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky top-0 bg-black flex justify-between items-center px-3 py-1">
+  <div v-if="!isLandingPage" class="sticky top-0 bg-black flex justify-between items-center px-3 py-1">
     <!-- Menu Button -->
     <button class="bg-transparent border-none py-2" @click="toggleSideNav">
       <i v-if="!showSideNav" class="fas fa-bars text-white text-3xl pl-10"></i>
@@ -16,7 +16,7 @@
     <DiscardPopup v-if="showPopup" @discard="discardChanges" @cancel="cancel" />
 
     <!-- Side Navigation Bar -->
-    <div v-if="showSideNav" class="fixed top-0 left-0 h-screen w-60 bg-gray-100 pt-1 z-10">
+    <div v-if="showSideNav || isOpenAlways" class="fixed top-0 left-0 h-screen w-60 bg-gray-100 pt-1 z-10">
       <button
         @click="toggleSideNav"
         class="nav-bar-button flex items-center justify-end p-1 pr-5 pt-2 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border"
@@ -35,6 +35,7 @@
 
       <button
         @click="navigateTo('/budget')"
+        :class="{ 'active': isActive('/budget') }"
         class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
       >
         <i class="fas fa-money-bill text-black" style="font-size: 25px;"></i>
@@ -43,6 +44,7 @@
 
       <button
         @click="navigateTo('/bill-reminders')"
+        :class="{ 'active': isActive('/bill-reminders') }"
         class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
       >
         <i class="fas fa-bell text-black" style="font-size: 25px;"></i>
@@ -51,21 +53,25 @@
 
       <button
         @click="navigateTo('/view-financial-report')"
+        :class="{ 'active': isActive('/view-financial-report') }"
         class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
       >
-        <!-- <img src="financial-report.svg" alt="Financial Report Icon" class="nav-bar-icon" /> -->
         <i class="fas fa-chart-pie text-black" style="font-size: 25px;"></i>
         <span class="ml-2 pl-2">View Financial Report</span>
       </button>
 
       <button
         @click="navigateTo('/about')"
+        :class="{ 'active': isActive('/about') }"
         class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
-        ><i class="fas fa-question text-black" style="font-size: 25px;"></i>
+      >
+        <i class="fas fa-question text-black" style="font-size: 25px;"></i>
         <span class="ml-2 pl-4">About</span>
       </button>
 
-      <button @click="navigateTo('/')"
+      <button
+        @click="navigateTo('/')"
+        :class="{ 'active': isActive('/') }"
         class="flex items-center justify-start p-3 bg-transparent transition ease-in-out duration-300 cursor-pointer w-full box-border hover:bg-ffd700"
       >
         <i class="fas fa-sign-out-alt text-black" style="font-size: 25px;"></i>
@@ -83,7 +89,9 @@ export default {
   data() {
     return {
       showPopup: false, // Flag to control the display of the discard popup
-      showSideNav: true // Flag to control the display of the side navigation bar
+      showSideNav: true, // Flag to control the display of the side navigation bar
+      isOpenAlways: false,
+      isLandingPage: false,
     }
   },
   methods: {
@@ -106,15 +114,23 @@ export default {
     },
     navigateTo(route) {
       this.$router.push(route)
-      this.showSideNav = false // Close the side navigation bar when navigating
+      if (!this.showSideNav) {
+        this.showSideNav = true // Open the side navigation bar if it's closed
+      }
     },
     isActive(route) {
-      return this.$route.path === route // Check if the current route matches the given route
+      return this.$route.path === route; // Check if the current route matches the given route
+    }
+  },
+  computed: {
+    isLandingPage() {
+      const landingPages = ["/", "/login", "/register"];
+      return landingPages.includes(this.$route.path);
     }
   },
   components: {
     DiscardPopup
-  }
+  },
 }
 </script>
 

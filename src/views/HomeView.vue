@@ -9,13 +9,13 @@
     <div>
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
-        class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl p-3 pl-9 pr-9 mb-6 shadow-lg">
+        class="transform duration-500 hover:scale-90 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl p-3 pl-9 pr-9 mb-6 shadow-lg">
         <h2 class="text-2xl font-bold mb-1 pl-8">Remaining Balance</h2>
         <p class="text-xl">{{ monthBudgetLeft }}</p>
       </div>
       <!-- Expenses -->
       <div @click="navigateTo('/expenses-view')"
-        class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl pl-7 pr-7 pt-5 pb-4 shadow-lg">
+        class="transform duration-500 hover:scale-90 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl pl-7 pr-7 pt-5 pb-4 shadow-lg">
         <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
         <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
@@ -25,7 +25,7 @@
       </div>
 
       <!-- Add Expenses Button -->
-      <div class="bg-black flex justify-center mt-2 px-20 py-2 rounded-full hover:scale-110">
+      <div class="bg-black flex justify-center mt-2 px-20 py-2 rounded-full hover:scale-90">
         <router-link to="/add-expenses" class="image-button">
           <i class="fas fa-plus text-white text-3xl"></i>
         </router-link>
