@@ -35,13 +35,13 @@
             <h3 class="text-lg font-medium">Amount</h3>
             <div class="flex items-center">
               <select class="h-7 border-2 border-black rounded-l pl-2" required v-model="budget.currency">
-                <option value="$">Php</option>
+                <option value="Php">Php</option>
                 <option value="$">$</option>
                 <option value="€">€</option>
                 <option value="¥">¥</option>
                 <!-- Add more currency options as needed -->
               </select>
-              <input type="number" class="w-full h-7 border-2 border-black rounded-r" required v-model="budget.amount" step="0.01" />
+              <input type="number" class="w-full h-7 border-2 border-black rounded-r text-right" required v-model="budget.amount" step="0.01" />
             </div>
           </div>
           <div class="flex items-center justify-between mt-2">
@@ -80,8 +80,8 @@ export default {
         category: 'Choose',
         specifyCategory: '',
         paymentType: 'Choose',
-        currency: '$', // Add currency field
-        amount: '',
+        currency: 'Php',
+        amount: '0.00',
         timeline: '',
         note: ''
       }
