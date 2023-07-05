@@ -14,11 +14,7 @@
     <!-- Add Expenses Button -->
     <div class="flex justify-center mt-2">
       <router-link to="/set-reminders" class="image-button">
-<<<<<<< HEAD
-        <div class="bg-black flex justify-center items-center px-20 py-2 rounded-full w-12 hover:scale-110">
-=======
         <div class="bg-black flex justify-center items-center px-20 py-2 w-8 rounded-full hover:scale-110">
->>>>>>> e7825f5cb7605aa04ee8a6c37397dbbb1de3f226
           <i class="fas fa-plus text-white text-3xl"></i>
         </div>
       </router-link>

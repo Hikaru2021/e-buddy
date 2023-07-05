@@ -38,8 +38,6 @@
           <input
             type="time"
             class="ml-auto w-40 h-7 border-2 border-black rounded text-right"
-<<<<<<< HEAD
-=======
           />
         </div>
 
@@ -49,7 +47,6 @@
           <input
             type="text"
             class="ml-auto w-40 h-7 border-2 border-black rounded text-right"
->>>>>>> e7825f5cb7605aa04ee8a6c37397dbbb1de3f226
           />
         </div>
       </div>
@@ -58,11 +55,7 @@
       <!-- Save Button -->
       <router-link
         to="/bill-reminders"
-<<<<<<< HEAD
-        class="bg-black hover:bg-amber-400 text-white font-bold py-2 px-9 rounded mt-4"
-=======
         class="bg-black hover:opacity-80 text-white font-bold py-2 px-9 rounded mt-4"
->>>>>>> e7825f5cb7605aa04ee8a6c37397dbbb1de3f226
       >
         Save
       </router-link>
