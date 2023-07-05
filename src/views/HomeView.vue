@@ -6,44 +6,37 @@
         <side-nav></side-nav>
       </div>
       <div>
-        <img class="block lg:hidden h-8 w-auto" src="/logo2.png" alt="Logo">
-        <img class="hidden lg:block p-1 h-14 w-auto" src="/logo2.png" alt="Logo">
-      </div>
-      <div>
         <button @click="navigateTo('/notifications')" class="bg-transparent border-none">
-          <img src="notification.svg" alt="Right Button" class="h-10 w-10" />
+          <i class="fas fa-bell text-white text-3xl pr-10 pb-1 pt-1"></i>
         </button>
       </div>
     </div>
 
-    <!-- Particles Background -->
-    <div id="particles" class="particles-container"></div>
-
     <!-- Budget & Expenses Container -->
-    <div class="flex flex-col justify-center items-center h-screen">
+    <div :class="{ 'container-open': showSideNav }" class="flex flex-col items-center h-screen bg-image mt-10">
       <!-- Budget -->
       <div @click="navigateTo('/budget')"
-        class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl p-3 pl-9 pr-9 mb-6 shadow-lg">
-        <h2 class="text-2xl font-bold mb-1 pl-8">Remaining Balance</h2>
+        class="clickable-card text-center border border-black rounded-2xl py-5 px-5 mb-2 shadow-md hover:shadow-highlight">
+        <h2 class="text-2xl font-bold mb-1 pl-20 pr-20">Remaining Balance</h2>
         <p class="text-xl">{{ monthBudgetLeft }}</p>
       </div>
       <!-- Expenses -->
       <div @click="navigateTo('/expenses-view')"
-        class="transform duration-500 hover:scale-110 shadow hover:shadow-md clickable-card text-center border border-black rounded-2xl pl-7 pr-7 pt-5 pb-4 shadow-lg">
+        class="clickable-card text-center border border-black rounded-2xl px-20 py-8 hover:shadow-highlight">
         <h2 class="text-2xl font-bold mb-1">This Week's Expenses</h2>
         <p class="text-xl p-2">{{ thisWeeksExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">This Month's Expenses</h2>
         <p class="text-xl p-2">{{ thisMonthsExpenses }}</p>
         <h2 class="text-2xl font-bold mb-1">Last Month's Expenses</h2>
-        <p class="text-xl p-2">{{ lastMonthsExpenses }}</p>
+        <p class="text-xl">{{ lastMonthsExpenses }}</p>
       </div>
-    </div>
 
-    <!-- Add Expenses Button -->
-    <div class="sticky-container bg-black">
-      <router-link to="/add-expenses" class="image-button">
-        <img src="add-expenses.svg" alt="Image Button" class="h-10 w-10" />
-      </router-link>
+      <!-- Add Expenses Button -->
+      <div class="bg-black flex justify-center mt-2 px-20 py-2 rounded-full">
+        <router-link to="/add-expenses" class="image-button">
+          <i class="fas fa-plus text-white text-3xl"></i>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -58,121 +51,6 @@ import getDb from "@/composable/getDb.js";
 import getMonthBudget from '@/composable/getMonthBudget.js'
 
 export default {
-  mounted() {
-    this.initializeParticles();
-  },
-  methods: {
-    initializeParticles() {
-      particlesJS("particles", {
-        particles: {
-          number: {
-            value: 100,
-            density: {
-              enable: true,
-              value_area: 800
-            }
-          },
-          color: {
-            value: "#ffffff"
-          },
-          shape: {
-            type: "star",
-            stroke: {
-              width: 0,
-              color: "#000000"
-            },
-            polygon: {
-              nb_sides: 5
-            }
-          },
-          opacity: {
-            value: 0.5,
-            random: false,
-            anim: {
-              enable: false,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false
-            }
-          },
-          size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: false,
-              speed: 40,
-              size_min: 0.1,
-              sync: false
-            }
-          },
-          move: {
-            enable: true,
-            speed: 6,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200
-            }
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "repulse"
-            },
-            onclick: {
-              enable: true,
-              mode: "push"
-            },
-            resize: true
-          },
-          modes: {
-            grab: {
-              distance: 400,
-              line_linked: {
-                opacity: 1
-              }
-            },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
-              speed: 3
-            },
-            repulse: {
-              distance: 100,
-              duration: 0.4
-            },
-            push: {
-              particles_nb: 4
-            },
-            remove: {
-              particles_nb: 2
-            }
-          }
-        },
-        retina_detect: true
-      });
-    },
-    navigateTo(route) {
-      this.$router.push(route)
-    }
-  },
-  components: {
-    AddExpenses,
-    Budget,
-    ExpensesView,
-    SideNav,
-    Notifications
-  },
   setup() {
     const {
       expenses,
@@ -194,8 +72,21 @@ export default {
       lastMonthsExpenses,
       monthBudgetLeft,
       error,
+      showSideNav: true // Set showSideNav to true by default
     };
   },
+  components: {
+    AddExpenses,
+    Budget,
+    ExpensesView,
+    SideNav,
+    Notifications
+  },
+  methods: {
+    navigateTo(route) {
+      this.$router.push(route)
+    }
+  }
 }
 </script>
 
@@ -204,11 +95,13 @@ export default {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
   display: flex;
-  justify-content: center;
+  width: 50%;
   padding: 10px;
   background-color: #f5f5f5;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .sticky-buttons {
@@ -230,27 +123,27 @@ export default {
   cursor: pointer;
 }
 
-.particles-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
 .bg-image {
-  background-image: url('/homebg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+    background-image: url('/homebg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  .bg-image .grid {
+    flex-grow: 1;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 5px 7px rgba(80, 79, 79, 0.1), 0 5px 7px rgba(93, 93, 93, 0.6);
+  }
+
+  .hover\:shadow-highlight:hover {
+  box-shadow: 5px 5px 5px rgba(255, 215, 0, 0.6), 0 5px 7px rgba(80, 79, 79, 0.1);
 }
 
-.bg-image .grid {
-  flex-grow: 1;
-}
-
-.shadow-lg {
-  box-shadow: 0 5px 7px rgba(80, 79, 79, 0.1), 0 5px 7px rgba(93, 93, 93, 0.6);
+.container-open {
+  margin-left: 60px; 
+  transition: margin-left 0.3s ease-in-out; 
 }
 </style>
